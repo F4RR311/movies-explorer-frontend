@@ -20,13 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="initial">
-      <change afterPath="$PROJECT_DIR$/src/utils/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AboutProject/AboutProject.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AboutProject/AboutProject.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FilterCheckbox/FilterCheckbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FilterCheckbox/FilterCheckbox.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +55,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components" />
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\AboutMe" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -81,7 +95,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659726986905</updated>
-      <workItem from="1659726987953" duration="887000" />
+      <workItem from="1659726987953" duration="1132000" />
+      <workItem from="1660773430731" duration="546000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -97,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659727230631</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="initial">
+      <created>1659727902735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1659727902736</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,31 +135,36 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <option name="LAST_COMMIT_MESSAGE" value="initial" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="263" key="GridCell.Tab.0.bottom" timestamp="1659727207048">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1660773453395">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1899" height="263" key="GridCell.Tab.0.bottom/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659727207048" />
-    <state width="1899" height="263" key="GridCell.Tab.0.center" timestamp="1659727207048">
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1660773453395" />
+    <state width="1899" height="263" key="GridCell.Tab.0.bottom" timestamp="1659728139137">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1899" height="263" key="GridCell.Tab.0.center/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659727207048" />
-    <state width="1899" height="263" key="GridCell.Tab.0.left" timestamp="1659727207048">
+    <state width="1899" height="263" key="GridCell.Tab.0.bottom/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659728139137" />
+    <state width="1899" height="263" key="GridCell.Tab.0.center" timestamp="1659728139137">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1899" height="263" key="GridCell.Tab.0.left/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659727207048" />
-    <state width="1899" height="263" key="GridCell.Tab.0.right" timestamp="1659727207048">
+    <state width="1899" height="263" key="GridCell.Tab.0.center/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659728139137" />
+    <state width="1899" height="263" key="GridCell.Tab.0.left" timestamp="1659728139137">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1899" height="263" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659727207048" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1659727234799">
+    <state width="1899" height="263" key="GridCell.Tab.0.left/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659728139137" />
+    <state width="1899" height="263" key="GridCell.Tab.0.right" timestamp="1659728139137">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659727234799" />
+    <state width="1899" height="263" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659728139137" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1659727906988">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1659727906988" />
   </component>
 </project>

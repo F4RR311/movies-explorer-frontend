@@ -8,8 +8,8 @@ export default function AboutMe() {
         <h2 className="about-me__title">Студент</h2>
         <div className="about-me__bio-container">
           <div className="about-me__bio">
-            <h3 className="about-me__name">Никита</h3>
-            <p className="about-me__age">Фронтенд-разработчик, 25 лет</p>
+            <h3 className="about-me__name">Валерий</h3>
+            <p className="about-me__age">Фронтенд-разработчик, 31 год</p>
             <p className="about-me__text">
               Я родился в Первомайске, сейчас живу в Москве, с отличием закончил
               электроэнергетический факультет ИГЭУ им. В.И. Ленина. Занимаюсь
@@ -22,7 +22,7 @@ export default function AboutMe() {
             <ul className="about-me__socials">
               <li>
                 <a
-                  href="https://vk.com/nikkach"
+                  href="https://vk.com/fucking.selfish"
                   target="_blank"
                   rel="noreferrer"
                   className="about-me__social-link"
@@ -32,7 +32,7 @@ export default function AboutMe() {
               </li>
               <li>
                 <a
-                  href="https://github.com/TinaevNK"
+                  href="https://github.com/F4RR311"
                   target="_blank"
                   rel="noreferrer"
                   className="about-me__social-link"

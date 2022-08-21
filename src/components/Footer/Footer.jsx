@@ -22,7 +22,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://github.com/TinaevNK"
+                href="https://github.com"
                 target="_blank"
                 rel="noreferrer"
                 className="footer__link"
@@ -32,7 +32,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://vk.com/nikkach"
+                href="https://vk.com"
                 target="_blank"
                 rel="noreferrer"
                 className="footer__link"

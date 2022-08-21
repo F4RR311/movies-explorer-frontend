@@ -1,25 +1,25 @@
 
 import "./NavTab.css";
-import { NavLink} from "react-router-dom";
+import { Link} from "react-router-dom";
 import React from "react";
 
 export const NavTab = () => {
   return (
     <nav className="nav-tab">
       <div className="nav-tab__wrapper">
-        <NavLink to="/#project" className="nav-tab__link">
+        <Link to="/#project" className="nav-tab__link">
           О проекте
-        </NavLink>
+        </Link>
       </div>
       <div className="nav-tab__wrapper">
-        <NavLink to="/#techs" className="nav-tab__link">
+        <Link to="/#techs" className="nav-tab__link">
           Технологии
-        </NavLink>
+        </Link>
       </div>
       <div className="nav-tab__wrapper">
-        <NavLink to="/#about" className="nav-tab__link">
+        <Link to="/#about" className="nav-tab__link">
           Студент
-        </NavLink>
+        </Link>
       </div>
     </nav>
   );

@@ -7,7 +7,7 @@ export default function Profile() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // handleProfile(values);
+
   }
 
   useEffect(() => {

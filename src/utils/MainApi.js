@@ -100,7 +100,7 @@ class Api {
 }
 
 const mainApi = new Api({
-    // создаём экземляр класса работающего с API сервера
+
     baseUrl: BASE_URL,
 });
 

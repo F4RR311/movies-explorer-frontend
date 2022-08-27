@@ -237,9 +237,9 @@ export default function App() {
 
     return (
         <div className="app">
-            {!load ? (
-                <Preloader isOpen={isLoader} />
-            ) : (
+            {/*{!load ? (*/}
+            {/*    <Preloader isOpen={isLoader} />*/}
+            {/*) : (*/}
                 <CurrentUserContext.Provider value={currentUser}>
                     <Route exact path={headerEndpoints}>
                         <Header
@@ -298,13 +298,13 @@ export default function App() {
                     <Route exact path={footerEndpoints}>
                         <Footer />
                     </Route>
-                    <Preloader isOpen={isLoader} />
+                    {/*<Preloader isOpen={isLoader} />*/}
                     <InfoTooltip
                         status={isInfoTooltip}
                         onClose={closeInfoTooltip}
                     />
                 </CurrentUserContext.Provider>
-            )}
+            {/*)}*/}
         </div>
     );
 }

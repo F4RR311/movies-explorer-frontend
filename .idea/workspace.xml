@@ -19,14 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="fix">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useScreenWidth.jsx" afterDir="false" />
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="develop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFormWithValidation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFormWithValidation.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/hooks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -63,15 +63,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\node_modules" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\hooks" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\utils" />
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -105,7 +105,8 @@
       <workItem from="1661098552639" duration="7415000" />
       <workItem from="1661278454751" duration="736000" />
       <workItem from="1661532649940" duration="1053000" />
-      <workItem from="1661629365770" duration="2069000" />
+      <workItem from="1661629365770" duration="5101000" />
+      <workItem from="1661635335045" duration="439000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -163,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661630779210</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="develop">
+      <created>1661631516380</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661631516380</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,32 +196,33 @@
     <MESSAGE value="create navTab" />
     <MESSAGE value="final fix" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="develop" />
+    <option name="LAST_COMMIT_MESSAGE" value="develop" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661630052081">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661630052081" />
-    <state width="1877" height="86" key="GridCell.Tab.0.bottom" timestamp="1661001000149">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1661635762552">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.bottom/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state width="1877" height="86" key="GridCell.Tab.0.center" timestamp="1661001000149">
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635762552" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1661635762552">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.center/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state width="1877" height="86" key="GridCell.Tab.0.left" timestamp="1661001000149">
+    <state width="1877" height="275" key="GridCell.Tab.0.center/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635762552" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1661635762552">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.left/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state width="1877" height="86" key="GridCell.Tab.0.right" timestamp="1661001000149">
+    <state width="1877" height="275" key="GridCell.Tab.0.left/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635762552" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1661635762552">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661630782225">
+    <state width="1877" height="275" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635762552" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661631518963">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661630782225" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661631518963" />
   </component>
 </project>

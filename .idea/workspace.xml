@@ -19,15 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="last fixes">
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="fix">
+      <change afterPath="$PROJECT_DIR$/src/hooks/useEscapePress.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/MoviesApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavTab/NavTab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavTab/NavTab.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Techs/Techs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Techs/Techs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Hamburger/Hamburger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hamburger/Hamburger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/auth.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/мой макет/movies-explorer-frontend-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../movies-explorer-api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -64,15 +66,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\hooks" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\utils" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\images" />
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\AboutMe" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -103,7 +105,10 @@
       <workItem from="1660781400063" duration="2000" />
       <workItem from="1660859113597" duration="24000" />
       <workItem from="1660994408505" duration="4199000" />
-      <workItem from="1661098552639" duration="7270000" />
+      <workItem from="1661098552639" duration="7415000" />
+      <workItem from="1661278454751" duration="736000" />
+      <workItem from="1661532649940" duration="1053000" />
+      <workItem from="1661629365770" duration="1396000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -147,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661102264694</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="final fix">
+      <created>1661111487577</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661111487577</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,13 +182,15 @@
     <MESSAGE value="start-develop" />
     <MESSAGE value="last fixes" />
     <MESSAGE value="create navTab" />
-    <option name="LAST_COMMIT_MESSAGE" value="create navTab" />
+    <MESSAGE value="final fix" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661108419034">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661630052081">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661108419034" />
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661630052081" />
     <state width="1877" height="86" key="GridCell.Tab.0.bottom" timestamp="1661001000149">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -193,9 +207,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="86" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661102268767">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661111490003">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661102268767" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661111490003" />
   </component>
 </project>

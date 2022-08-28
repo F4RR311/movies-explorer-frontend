@@ -82,6 +82,6 @@
 ## *Ссылки:*
 
 * Домен по которому доступно приложение [https://f4rr311.nomoredomains.xyz](https://f4rr311.nomoredomains.xyz/)
-* Домен с собственным бэкендом [https://github.com/F4RR311/movies-explorer-api](https://github.com/F4RR311/movies-explorer-api)
+* Домен с собственным бэкендом [https://api.f4rr311.nomoredomains.sbs](https://api.f4rr311.nomoredomains.sbs)
 * Домен со сторонним API(все фильмы) [https://api.nomoreparties.co/beatfilm-movies](https://api.nomoreparties.co/beatfilm-movies)
 * Публичный IP адрес сервера `51.250.66.62

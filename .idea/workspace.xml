@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="readme+https">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="readme" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +99,7 @@
       <workItem from="1661532649940" duration="1053000" />
       <workItem from="1661629365770" duration="5101000" />
       <workItem from="1661635335045" duration="450000" />
-      <workItem from="1661676473210" duration="6074000" />
+      <workItem from="1661676473210" duration="6680000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -230,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661682555833</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="readme">
+      <created>1661682795497</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1661682795497</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +264,8 @@
     <MESSAGE value="json" />
     <MESSAGE value="port" />
     <MESSAGE value="readme+https" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme+https" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661682470157">
@@ -283,9 +288,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635789651" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661682558517">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661682797609">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661682558517" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661682797609" />
   </component>
 </project>

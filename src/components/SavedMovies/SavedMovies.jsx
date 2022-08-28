@@ -17,6 +17,7 @@ export default function SavedMovies({ onDeleteClick, savedMoviesList, setIsInfoT
     const [filteredMovies, setFilteredMovies] = useState(showedMovies); // отфильтрованные по запросу фильмы
 
     // поиск по запросу
+
     function handleSearchSubmit(inputValue) {
         const moviesList = filterMovies(savedMoviesList, inputValue, shortMovies);
         if (moviesList.length === 0) {

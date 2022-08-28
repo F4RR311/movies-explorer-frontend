@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="json">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +49,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../15й ФИНИШ/react-mesto-api-full" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/full function/movies-explorer-frontend-main" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -57,15 +58,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\node_modules" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\hooks" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\utils" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -101,7 +102,7 @@
       <workItem from="1661532649940" duration="1053000" />
       <workItem from="1661629365770" duration="5101000" />
       <workItem from="1661635335045" duration="450000" />
-      <workItem from="1661676473210" duration="2978000" />
+      <workItem from="1661676473210" duration="3522000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -194,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661679227047</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="json">
+      <created>1661679483804</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1661679483804</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,10 +233,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="json" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661679297822">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661679990069">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661679297822" />
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661679990069" />
     <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1661635789651">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -245,9 +253,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635789651" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661679228898">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661679486786">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661679228898" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661679486786" />
   </component>
 </project>

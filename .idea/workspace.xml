@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="develop">
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="fix movies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../15й ФИНИШ/react-mesto-api-full" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../movies-explorer-api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -103,7 +103,7 @@
       <workItem from="1661532649940" duration="1053000" />
       <workItem from="1661629365770" duration="5101000" />
       <workItem from="1661635335045" duration="450000" />
-      <workItem from="1661676473210" duration="573000" />
+      <workItem from="1661676473210" duration="2438000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -175,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661635783290</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix movies">
+      <created>1661677214960</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661677214960</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,13 +208,14 @@
     <MESSAGE value="final fix" />
     <MESSAGE value="fix" />
     <MESSAGE value="develop" />
-    <option name="LAST_COMMIT_MESSAGE" value="develop" />
+    <MESSAGE value="fix movies" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix movies" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661676642636">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661678711316">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661676642636" />
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661678711316" />
     <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1661635789651">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -224,9 +232,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635789651" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661635786162">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661677218299">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635786162" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661677218299" />
   </component>
 </project>

@@ -48,7 +48,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../movies-explorer-api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../15й ФИНИШ/react-mesto-api-full" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -101,7 +101,7 @@
       <workItem from="1661532649940" duration="1053000" />
       <workItem from="1661629365770" duration="5101000" />
       <workItem from="1661635335045" duration="450000" />
-      <workItem from="1661676473210" duration="2721000" />
+      <workItem from="1661676473210" duration="2978000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -187,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661679085473</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="json">
+      <created>1661679227047</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1661679227047</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,10 +225,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="json" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661678711316">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661679297822">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661678711316" />
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661679297822" />
     <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1661635789651">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -238,9 +245,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635789651" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661679089371">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661679228898">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661679089371" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661679228898" />
   </component>
 </project>

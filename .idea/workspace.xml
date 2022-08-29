@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="readme" />
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="readme">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useEscapePress.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useEscapePress.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,15 +59,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\node_modules" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\hooks" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -100,6 +104,8 @@
       <workItem from="1661629365770" duration="5101000" />
       <workItem from="1661635335045" duration="450000" />
       <workItem from="1661676473210" duration="6680000" />
+      <workItem from="1661707376661" duration="789000" />
+      <workItem from="1661749473961" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -234,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661682795497</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="readme">
+      <created>1661707564687</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1661707564687</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,9 +301,9 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="275" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661635789651" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661682797609">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661707568966">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661682797609" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661707568966" />
   </component>
 </project>

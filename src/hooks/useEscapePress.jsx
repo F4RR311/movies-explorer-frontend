@@ -9,7 +9,7 @@ export default function useEscapePress(callback, dependency) {
         }
       }
       document.addEventListener('keyup', onEscClose);
-      // при размонтировании удалим обработчик данным колбэком
+
       return () => {
         document.removeEventListener('keyup', onEscClose)
       };

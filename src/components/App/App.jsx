@@ -1,8 +1,8 @@
 import './App.css';
 import mainApi from '../../utils/MainApi.js';
 import CurrentUserContext from '../../contexts/CurrentUserContext.jsx';
-import { useState, useEffect } from 'react';
-import { Route, Switch, Redirect, useHistory, useLocation } from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import {Route, Switch, Redirect, useHistory, useLocation} from 'react-router-dom';
 import useEscapePress from '../../hooks/useEscapePress.jsx';
 import Header from '../Header/Header.jsx';
 import Main from '../Main/Main.jsx';
@@ -16,6 +16,7 @@ import NotFound from '../NotFound/NotFound.jsx';
 import Preloader from '../Preloader/Preloader.jsx';
 import InfoTooltip from '../InfoTooltip/InfoTooltip.jsx';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.jsx';
+
 
 export default function App() {
     const history = useHistory();
@@ -44,7 +45,7 @@ export default function App() {
 
     //закрытие попапа с информацией
     function closeInfoTooltip() {
-        setIsInfoTooltip({ ...isInfoTooltip, isOpen: false });
+        setIsInfoTooltip({...isInfoTooltip, isOpen: false});
     }
 
     // кнопка назад на 404 странице
@@ -52,13 +53,13 @@ export default function App() {
         history.goBack();
     }
 
-    function handleRegister({ name, email, password }) {
+    function handleRegister({name, email, password}) {
         setIsLoader(true);
         mainApi
             .createUser(name, email, password)
             .then(data => {
                 if (data._id) {
-                    handleLogin({ email, password });
+                    handleLogin({email, password});
                 }
             })
             .catch(err =>
@@ -71,7 +72,7 @@ export default function App() {
             .finally(() => setIsLoader(false));
     }
 
-    function handleLogin({ email, password }) {
+    function handleLogin({email, password}) {
         setIsLoader(true);
         mainApi
             .login(email, password)
@@ -105,7 +106,7 @@ export default function App() {
         history.push('/');
     }
 
-    function handleProfile({ name, email }) {
+    function handleProfile({name, email}) {
         setIsLoader(true);
         mainApi
             .updateUser(name, email)
@@ -132,14 +133,16 @@ export default function App() {
         mainApi
             .addNewMovie(movie)
             .then(newMovie => setSavedMoviesList([newMovie, ...savedMoviesList]))
-            .catch(err =>
-                setIsInfoTooltip({
-                    isOpen: true,
-                    successful: false,
-                    text: err,
-                })
-            );
+            .catch((err) => {
+                setIsInfoTooltip(true);
+                if (typeof err === "string") {
+                    setIsInfoTooltip({ text: err, color: "red" });
+                } else {
+                    setIsInfoTooltip({ text: "Непредвиденная ошибка" });
+                }
+            });
     }
+
 
     // удаление фильма
     function handleDeleteMovie(movie) {
@@ -238,7 +241,7 @@ export default function App() {
     return (
         <div className="app">
             {!load ? (
-                <Preloader isOpen={isLoader} />
+                <Preloader isOpen={isLoader}/>
             ) : (
                 <CurrentUserContext.Provider value={currentUser}>
                     <Route exact path={headerEndpoints}>
@@ -250,20 +253,20 @@ export default function App() {
                     </Route>
                     <Switch>
                         <Route exact path='/'>
-                            <Main />
+                            <Main/>
                         </Route>
                         <Route exact path='/signup'>
                             {!loggedIn ? (
-                                <Register handleRegister={handleRegister} />
+                                <Register handleRegister={handleRegister}/>
                             ) : (
-                                <Redirect to='/' />
+                                <Redirect to='/'/>
                             )}
                         </Route>
                         <Route exact path='/signin'>
                             {!loggedIn ? (
-                                <Login handleLogin={handleLogin} />
+                                <Login handleLogin={handleLogin}/>
                             ) : (
-                                <Redirect to='/' />
+                                <Redirect to='/'/>
                             )}
                         </Route>
                         <ProtectedRoute
@@ -292,13 +295,12 @@ export default function App() {
                             handleSignOut={handleSignOut}
                         />
                         <Route path='*'>
-                            <NotFound goBack={goBack} />
+                            <NotFound goBack={goBack}/>
                         </Route>
                     </Switch>
                     <Route exact path={footerEndpoints}>
-                        <Footer />
+                        <Footer/>
                     </Route>
-                    {/*<Preloader isOpen={isLoader} />*/}
                     <InfoTooltip
                         status={isInfoTooltip}
                         onClose={closeInfoTooltip}

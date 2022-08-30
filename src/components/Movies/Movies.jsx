@@ -63,7 +63,8 @@ export default function Movies({ setIsLoader, setIsInfoTooltip, savedMoviesList,
                     setIsInfoTooltip({
                         isOpen: true,
                         successful: false,
-                        text: 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.',
+                        text: 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.' +
+                            ' Подождите немного и попробуйте ещё раз.',
                     })
                 )
                 .finally(() => setIsLoader(false));

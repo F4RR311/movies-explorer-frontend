@@ -1,4 +1,5 @@
-const BASE_URL = 'https://api.f4rr311.nomoredomains.sbs';
+//const BASE_URL = 'https://api.f4rr311.nomoredomains.sbs';
+const BASE_URL = 'http://localhost:3001';
 const MOVIES_URL = 'https://api.nomoreparties.co/beatfilm-movies';
 const SHORTMOVIES_DURATION = 40;
 const DEVICE_PARAMS = {

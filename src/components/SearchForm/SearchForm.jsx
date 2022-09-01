@@ -5,30 +5,61 @@ import Checkbox from '../Checkbox/Checkbox.jsx';
 import useFormWithValidation from '../../hooks/useFormWithValidation.jsx';
 import CurrentUserContext from '../../contexts/CurrentUserContext.jsx';
 
-export default function SearchForm({ handleSearchSubmit, handleShortFilms, shortMovies }) {
-    const currentUser = useContext(CurrentUserContext);
-    const location = useLocation();
-    const { values, handleChange, isValid, setIsValid } = useFormWithValidation();
+export default function SearchForm({ handleSearch }) {
+    const [inputValue, setInputValue] = useState('');
+    const [shorts, setShorts] = useState(false);
 
-    const [errorQuery, setErrorQuery] = useState('');
+    const [placeholderContent, setPlaceholderContent] = useState('Фильм');
+    const [error, setError] = useState(false);
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        isValid ? handleSearchSubmit(values.search) : setErrorQuery('Нужно ввести ключевое слово.');
-    }
+    const { pathname } = useLocation();
 
-    useEffect(() => {
-        setErrorQuery('')
-    }, [isValid]);
+    const handleInput = (evt) => {
+        setInputValue(evt.target.value);
+    };
 
-    //состояние инпута из локального хранилища
-    useEffect(() => {
-        if (location.pathname === '/movies' && localStorage.getItem(`${currentUser.email} - movieSearch`)) {
-            const searchValue = localStorage.getItem(`${currentUser.email} - movieSearch`);
-            values.search = searchValue;
-            setIsValid(true);
+    const handleCheckbox = () => {
+        setShorts(!shorts);
+        localStorage.setItem('shorts', !shorts);
+        handleSearch(inputValue, !shorts);
+    };
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+
+        if (!inputValue) {
+            setError(true);
+            setPlaceholderContent('Нужно ввести ключевое слово');
+            evt.target.elements['search-query'].focus();
+            return;
         }
-    }, [currentUser]);
+
+        setError(false);
+        setPlaceholderContent('Фильм');
+
+        localStorage.setItem('query', inputValue);
+
+        handleSearch(inputValue, shorts);
+    };
+
+    useEffect(() => {
+        if (pathname === '/movies') {
+            const savedInputValue = localStorage.getItem('query');
+            const savedShorts = JSON.parse(localStorage.getItem('shorts'));
+
+            if (savedInputValue) {
+                setInputValue(savedInputValue);
+            }
+
+            if (savedShorts) {
+                setShorts(savedShorts);
+            }
+
+            if (savedInputValue || (savedShorts === true)) {
+                handleSearch(savedInputValue, savedShorts);
+            }
+        }
+    }, []);
 
     return (
         <section className="search">
@@ -39,14 +70,16 @@ export default function SearchForm({ handleSearchSubmit, handleShortFilms, short
                     type="text"
                     placeholder="Фильм"
                     autoComplete="off"
-                    value={values.search || ''}
-                    onChange={handleChange}
+                    value={inputValue}
+                    placeholder={placeholderContent}
+                    onChange={handleInput}
                     required
                 />
-                <span className="search__error">{errorQuery}</span>
+                {/*<span className="search__error">{errorQuery}</span>*/}
                 <button className="search__button" type="submit"></button>
             </form>
-            <Checkbox shortMovies={shortMovies} handleShortFilms={handleShortFilms} />
+            <Checkbox value={shorts}
+                      onChange={handleCheckbox} />
         </section>
     )
 }

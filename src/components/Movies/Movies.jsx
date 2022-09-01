@@ -1,5 +1,5 @@
 import './Movies.css';
-import { useState, useContext, useEffect } from 'react';
+import {useState, useContext, useEffect} from 'react';
 import {
     transformMovies, // для адаптирования полей под свой бэкенд
     filterMovies, // фильтрация начального массива всех фильмов по запросу
@@ -9,8 +9,9 @@ import moviesApi from '../../utils/MoviesApi.js';
 import SearchForm from '../SearchForm/SearchForm.jsx';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.jsx';
 import CurrentUserContext from '../../contexts/CurrentUserContext.jsx';
+import {searchFilter} from "../../utils/utils";
 
-export default function Movies({ setIsLoader, setIsInfoTooltip, savedMoviesList, onLikeClick, onDeleteClick }) {
+export default function Movies({setIsLoader, setIsInfoTooltip, savedMoviesList, onLikeClick, onDeleteClick}) {
     const currentUser = useContext(CurrentUserContext);
 
     const [shortMovies, setShortMovies] = useState(false); // состояние чекбокса
@@ -20,44 +21,33 @@ export default function Movies({ setIsLoader, setIsInfoTooltip, savedMoviesList,
     const [isAllMovies, setIsAllMovies] = useState([]); // все фильмы от сервера, для единоразового обращения к нему
 
     // поиск по массиву и установка состояния
-    function handleSetFilteredMovies(movies, userQuery, shortMoviesCheckbox) {
-        const moviesList = filterMovies(movies, userQuery, shortMoviesCheckbox);
-        if (moviesList.length === 0) {
-            setIsInfoTooltip({
-                isOpen: true,
-                successful: false,
-                text: 'Ничего не найдено.',
-            });
-            setNotFound(true);
-        } else {
-            setNotFound(false);
+    const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const filter = (query, shorts) => {
+        const storedMovies = JSON.parse(localStorage.getItem('movies'));
+        const filtered = searchFilter(storedMovies, query, shorts);
+
+        if (filtered.length === 0) {
+            setErrorMessage('Ничего не найдено');
         }
-        setInitialMovies(moviesList);
-        setFilteredMovies(
-            shortMoviesCheckbox ? filterShortMovies(moviesList) : moviesList
-        );
-        localStorage.setItem(
-            `${currentUser.email} - movies`,
-            JSON.stringify(moviesList)
-        );
-    }
 
-    // поиск по запросу
-    function handleSearchSubmit(inputValue) {
-        localStorage.setItem(`${currentUser.email} - movieSearch`, inputValue);
-        localStorage.setItem(`${currentUser.email} - shortMovies`, shortMovies);
+        setMovies(filtered);
+        setLoading(false);
+    };
 
-        if (isAllMovies.length === 0) {
-            setIsLoader(true);
-            moviesApi
-                .getMovies()
-                .then(movies => {
-                    setIsAllMovies(movies);
-                    handleSetFilteredMovies(
-                        transformMovies(movies),
-                        inputValue,
-                        shortMovies
-                    );
+    const handleSearch = (query, shorts) => {
+        setLoading(true);
+        setErrorMessage('');
+
+        const storedMovies = JSON.parse(localStorage.getItem('movies'));
+
+        if (!storedMovies) {
+            moviesApi.getMovies()
+                .then((films) => {
+                    localStorage.setItem('movies', JSON.stringify(films));
+                    filter(query, shorts);
                 })
                 .catch(() =>
                     setIsInfoTooltip({
@@ -67,62 +57,45 @@ export default function Movies({ setIsLoader, setIsInfoTooltip, savedMoviesList,
                             ' Подождите немного и попробуйте ещё раз.',
                     })
                 )
-                .finally(() => setIsLoader(false));
-        } else {
-            handleSetFilteredMovies(isAllMovies, inputValue, shortMovies);
-        }
-    }
 
-    // состояние чекбокса
-    function handleShortFilms() {
-        setShortMovies(!shortMovies);
-        if (!shortMovies) {
-            setFilteredMovies(filterShortMovies(initialMovies));
         } else {
-            setFilteredMovies(initialMovies);
+            filter(query, shorts);
         }
-        localStorage.setItem(`${currentUser.email} - shortMovies`, !shortMovies);
-    }
+    };
 
-    // проверка чекбокса в локальном хранилище
     useEffect(() => {
-        if (localStorage.getItem(`${currentUser.email} - shortMovies`) === 'true') {
-            setShortMovies(true);
-        } else {
-            setShortMovies(false);
-        }
-    }, [currentUser]);
+        const savedMovies = localStorage.getItem('savedMovies');
 
-    // рендер фильмов из локального хранилища
-    useEffect(() => {
-        if (localStorage.getItem(`${currentUser.email} - movies`)) {
-            const movies = JSON.parse(
-                localStorage.getItem(`${currentUser.email} - movies`)
-            );
-            setInitialMovies(movies);
-            if (
-                localStorage.getItem(`${currentUser.email} - shortMovies`) === 'true'
-            ) {
-                setFilteredMovies(filterShortMovies(movies));
-            } else {
-                setFilteredMovies(movies);
-            }
+        if (!savedMovies) {
+            setLoading(true);
+
+            moviesApi.getMovies()
+                .then((films) => {
+                    if (films.length > 0) {
+                        localStorage.setItem('savedMovies', JSON.stringify(films));
+                    }
+                    setLoading(false);
+                })
+                .catch(() =>
+                    setIsInfoTooltip({
+                        isOpen: true,
+                        successful: false,
+                        text: 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.' +
+                            ' Подождите немного и попробуйте ещё раз.',
+                    })
+                )
+
         }
-    }, [currentUser]);
+    }, []);
 
     return (
         <main className="movies">
             <SearchForm
-                handleSearchSubmit={handleSearchSubmit}
-                handleShortFilms={handleShortFilms}
-                shortMovies={shortMovies}
+                handleSearch={handleSearch}
             />
-            {!NotFound && (
+            {loading && (
                 <MoviesCardList
-                    moviesList={filteredMovies}
-                    savedMoviesList={savedMoviesList}
-                    onLikeClick={onLikeClick}
-                    onDeleteClick={onDeleteClick}
+                    movies={movies} errorMessage={errorMessage}
                 />
             )}
         </main>

@@ -5,69 +5,75 @@ import useScreenWidth from '../../hooks/useScreenWidth.jsx';
 import { DEVICE_PARAMS } from '../../utils/constants.js';
 import { getSavedMovieCard } from '../../utils/utils.js';
 import MoviesCard from '../MoviesCard/MoviesCard.jsx';
+import {
+    MAX_MOVIES_1280,
+    MAX_MOVIES_630,
+    MAX_MOVIES_990, MAX_MOVIES_DEFAULT,
+    MAX_MOVIES_STEP_1280, MAX_MOVIES_STEP_990,
+    MAX_MOVIES_STEP_DEFAULT
+} from "../../utils/constants";
 
 
-export default function MoviesCardList({ moviesList, savedMoviesList, onLikeClick, onDeleteClick }) {
-    const screenWidth = useScreenWidth();
-
-    const { desktop, tablet, mobile } = DEVICE_PARAMS;
-    const [isMount, setIsMount] = useState(true);
-    const [showMovieList, setShowMovieList] = useState([]);
-    const [cardsShowDetails, setCardsShowDetails] = useState({ total: 12, more: 3 });
-
+export default function MoviesCardList({ movies, savedMoviesList, onLikeClick, onDeleteClick }) {
+    const [maxMovies, setMaxMovies] = useState(0);
+    const [step, setStep] = useState(0);
     const location = useLocation();
 
-    // количество отображаемых карточек при разной ширине экрана
+    const showMoreMovies = () => {
+        setMaxMovies(maxMovies + step);
+    };
+
+    const setCardsTemplate = () => {
+        const width = window.innerWidth;
+
+        if (location.pathname === '/saved-movies') {
+            setMaxMovies(movies.length);
+        }
+
+        if (width >= 1280) {
+            setMaxMovies(MAX_MOVIES_1280);
+            setStep(MAX_MOVIES_STEP_1280);
+        } else if (width >= 990) {
+            setMaxMovies(MAX_MOVIES_990);
+            setStep(MAX_MOVIES_STEP_990);
+        } else if (width >= 630) {
+            setMaxMovies(MAX_MOVIES_630);
+            setStep(MAX_MOVIES_STEP_DEFAULT);
+        } else {
+            setMaxMovies(MAX_MOVIES_DEFAULT);
+            setStep(MAX_MOVIES_STEP_DEFAULT);
+        }
+    };
+
     useEffect(() => {
-        if (location.pathname === '/movies') {
-            if (screenWidth > desktop.width) {
-                setCardsShowDetails(desktop.cards);
-            } else if (screenWidth <= desktop.width && screenWidth > mobile.width) {
-                setCardsShowDetails(tablet.cards);
-            } else {
-                setCardsShowDetails(mobile.cards);
-            }
-            return () => setIsMount(false);
-        }
-    }, [screenWidth, isMount, desktop, tablet, mobile, location.pathname]);
+        setCardsTemplate();
 
-    // изменяем отображаемый массив фильмов в зависимости от ширины экрана
-    useEffect(() => {
-        if (moviesList.length) {
-            const res = moviesList.filter((item, i) => i < cardsShowDetails.total);
-            setShowMovieList(res);
-        }
-    }, [moviesList, cardsShowDetails.total]);
-
-    // добавление карточек при клике по кнопке "Еще"
-    function handleClickMoreMovies() {
-        const start = showMovieList.length;
-        const end = start + cardsShowDetails.more;
-        const additional = moviesList.length - start;
-
-        if (additional > 0) {
-            const newCards = moviesList.slice(start, end);
-            setShowMovieList([...showMovieList, ...newCards]);
-        }
-    }
+        window.addEventListener('resize', () => {
+            setTimeout(() => {
+                setCardsTemplate();
+            }, 500);
+        });
+    }, []);
 
     return (
         <section className="movies-card-list">
             <ul className="movies-card-list__list">
-                {showMovieList.map(movie => (
-                    <MoviesCard
-                        key={movie.id || movie._id}
-                        saved={getSavedMovieCard(savedMoviesList, movie)}
-                        onLikeClick={onLikeClick}
-                        onDeleteClick={onDeleteClick}
-                        movie={movie}
-                    />
-                ))}
+                {movies.map((movie, index) => {
+                    if (index < maxMovies) {
+                        return (
+                            <MoviesCard
+                                key={movie.id || movie.movieId}
+                                movie={movie}
+                            />
+                        );
+                    }
+                    return null;
+                })}
             </ul>
-            {location.pathname === '/movies' && showMovieList.length >= 5 && showMovieList.length < moviesList.length && (
+            {movies.length > maxMovies && location.pathname !== '/saved-movies' && (
                 <button
                     className="movies-card-list__show-more"
-                    onClick={handleClickMoreMovies}
+                    onClick={showMoreMovies}
                 >
                     Ещё
                 </button>

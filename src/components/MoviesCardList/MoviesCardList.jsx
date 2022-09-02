@@ -1,18 +1,16 @@
+import React, { useEffect, useState } from 'react';
 import './MoviesCardList.css';
-import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import useScreenWidth from '../../hooks/useScreenWidth.jsx';
-import { DEVICE_PARAMS } from '../../utils/constants.js';
-import { getSavedMovieCard } from '../../utils/utils.js';
-import MoviesCard from '../MoviesCard/MoviesCard.jsx';
+import MoviesCard from '../MoviesCard/MoviesCard';
 import {
     MAX_MOVIES_1280,
     MAX_MOVIES_630,
-    MAX_MOVIES_990, MAX_MOVIES_DEFAULT,
-    MAX_MOVIES_STEP_1280, MAX_MOVIES_STEP_990,
-    MAX_MOVIES_STEP_DEFAULT
-} from "../../utils/constants";
-
+    MAX_MOVIES_990,
+    MAX_MOVIES_DEFAULT,
+    MAX_MOVIES_STEP_1280,
+    MAX_MOVIES_STEP_990,
+    MAX_MOVIES_STEP_DEFAULT,
+} from '../../utils/constants';
 
 export default function MoviesCardList({ movies, errorMessage }) {
     const [maxMovies, setMaxMovies] = useState(0);
@@ -56,28 +54,36 @@ export default function MoviesCardList({ movies, errorMessage }) {
     }, []);
 
     return (
-        <section className="movies-card-list">
-            <ul className="movies-card-list__list">
-                {movies.map((movie, index) => {
-                    if (index < maxMovies) {
-                        return (
-                            <MoviesCard
-                                key={movie.id || movie.movieId}
-                                movie={movie}
-                            />
-                        );
-                    }
-                    return null;
-                })}
-            </ul>
+        <div className="movies-card-list">
+            {errorMessage
+                ? <p className="movies-card-list__error-message">{errorMessage}</p>
+                : (
+                    <ul className="movies-card-list__movies-container">
+                        {movies.map((movie, index) => {
+                            if (index < maxMovies) {
+                                return (
+                                    <MoviesCard
+                                        key={movie.id || movie.movieId}
+                                        movie={movie}
+                                    />
+                                );
+                            }
+                            return null;
+                        })}
+                    </ul>
+                )}
             {movies.length > maxMovies && location.pathname !== '/saved-movies' && (
-                <button
-                    className="movies-card-list__show-more"
-                    onClick={showMoreMovies}
-                >
-                    Ещё
-                </button>
+                <div className="movies-card-list__button-container">
+                    <button
+                        className="movies-card-list__more-button"
+                        type="button"
+                        onClick={showMoreMovies}
+                    >
+                        Ещё
+                    </button>
+                </div>
             )}
-        </section>
+
+        </div>
     );
 }

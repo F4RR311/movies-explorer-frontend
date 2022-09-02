@@ -3,7 +3,7 @@ import './Header.css';
 import Logo from '../Logo/Logo';
 import UnauthLinks from '../UnauthLinks/UnauthLinks';
 import Navigation from '../Navigation/Navigation';
-import UserContext from '../../contexts/CurrentUserContext';
+import UserContext from '../../contexts/UserContext';
 
 export default function Header() {
   const { currentUser } = useContext(UserContext);

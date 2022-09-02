@@ -1,84 +1,105 @@
+import React, { useState, useContext, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../Logo/Logo';
+import TextInput from '../TextInput/TextInput';
+import useFormWithValidation from '../../hooks/useFormWithValidation';
+import mainApi from '../../utils/MainApi';
+import UserContext from '../../contexts/UserContext';
+import { CONFLICT_ERROR_CODE } from '../../utils/constants';
 import './Register.css';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../Logo/Logo'
-import useFormWithValidation from '../../hooks/useFormWithValidation.jsx';
 
-export default function Register({ handleRegister }) {
-  const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
+export default function Register() {
+  const form = useFormWithValidation();
+  const navigate = useNavigate();
+  const [registerError, setRegisterError] = useState('');
+  const [disabled, setDisabled] = useState(true);
 
+  const { setCurrentUser } = useContext(UserContext);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    handleRegister(values);
-  }
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    setDisabled(true);
+
+    mainApi.register(form.values)
+        .then((user) => mainApi.login({ email: user.email, password: form.values.password }))
+        .then(() => mainApi.getUser())
+        .then((user) => {
+          localStorage.setItem('loggedIn', true);
+          localStorage.setItem('userId', user._id);
+
+          setCurrentUser(user);
+          navigate('/movies');
+        })
+        .catch((err) => {
+          if (err.status === CONFLICT_ERROR_CODE) {
+            setRegisterError('Данный email уже зарегистрирован');
+          } else {
+            setRegisterError('Нет соединения с сервером');
+          }
+        });
+  };
 
   useEffect(() => {
-    resetForm();
-  }, [resetForm]);
+    setDisabled(!form.isValid);
+  }, [form.values]);
 
   return (
-    <main className="register">
-      <form className="register__form" name="register" noValidate onSubmit={handleSubmit}>
-        <Link to="/" className="register__link">
-        <Logo/>
-        </Link>
-        <h1 className="register__title">Добро пожаловать!</h1>
-        <div className="register__labels-container">
-          <label className="register__label">
-            <span className="register__label-text">Имя</span>
-            <input
-              name="name"
-              className={`register__input ${errors.name && 'register__input_error'}`}
-              onChange={handleChange}
-              value={values.name || ''}
-              type="text"
-              required
-              minLength="2"
-              maxLength="30"
-              pattern="^[A-Za-zА-Яа-яЁё /s -]+$"
-            />
-            <span className="register__error">{errors.name || ''}</span>
-          </label>
-          <label className="register__label">
-            <span className="register__label-text">E-mail</span>
-            <input
-              name="email"
-              className={`register__input ${errors.email && 'register__input_error'}`}
-              onChange={handleChange}
-              value={values.email || ''}
-              type="email"
-              required
-            />
-            <span className="register__error">{errors.email || ''}</span>
-          </label>
-          <label className="register__label">
-            <span className="register__label-text">Пароль</span>
-            <input
-              name="password"
-              className={`register__input ${errors.password && 'register__input_error'}`}
-              onChange={handleChange}
-              value={values.password || ''}
-              type="password"
-              required
-            />
-            <span className="register__error">{errors.password || ''}</span>
-          </label>
+      <div className="register">
+        <div className="register__top">
+          <Logo />
+          <h2 className="register__heading register__text">Добро пожаловать!</h2>
         </div>
-        <button
-          type="submit"
-          className={`register__button ${!isValid && 'register__button_disabled'}`}
-          disabled={!isValid}
+        <form
+            className="register__form"
+            id="register"
+            name="register"
+            onSubmit={handleSubmit}
+            noValidate
         >
-          Зарегистрироваться
-        </button>
-        <span className="register__support">
-          Уже зарегистрированы?&nbsp;
-          <Link to="signin" className="register__link">
-            Войти
-          </Link>
-        </span>
-      </form>
-    </main>
-  )
+          <TextInput
+              name="name"
+              label="Имя"
+              type="text"
+              pattern="^[a-zA-Zа-яА-Я\s-]+$"
+              value={form.values.name || ''}
+              onChange={form.handleChange}
+              errorMessage={form.errors.name}
+          />
+          <TextInput
+              name="email"
+              label="E-mail"
+              type="email"
+              pattern="^[\w]+@[a-zA-Z]+\.[a-zA-Z]{1,3}$"
+              value={form.values.email || ''}
+              onChange={form.handleChange}
+              errorMessage={form.errors.email}
+          />
+          <TextInput
+              name="password"
+              label="Пароль"
+              type="password"
+              value={form.values.password || ''}
+              onChange={form.handleChange}
+              errorMessage={form.errors.password}
+          />
+        </form>
+
+        <div className="register__bottom">
+          <p className="register__text register__text_color_red">{registerError}</p>
+          <button
+              className={`register__submit-button ${disabled && 'register__submit-button_disabled'} register__text`}
+              type="submit"
+              form="register"
+              disabled={disabled}
+          >
+            Зарегистрироваться
+          </button>
+          <div className="register__question">
+            <p className="register__text register__text_color_grey">Уже зарегистрированы?</p>
+            <Link to="/signin" className="register__link register__text">Войти</Link>
+          </div>
+        </div>
+      </div>
+  );
 }

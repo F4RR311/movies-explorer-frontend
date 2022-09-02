@@ -7,14 +7,13 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
-
-import UserContext from '../../contexts/CurrentUserContext';
+import NotFound from '../NotFound/NotFound'
+import UserContext from '../../contexts/UserContext';
 import mainApi from '../../utils/MainApi';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import TooltipContext from  '../../contexts/TooltipContext';
+import TooltipContext from '../../contexts/TooltipContext';
 import InfoTooltip from '../InfoTooltip/InfoTooltip';
 import { NO_CONNECTION_MESSAGE } from '../../utils/constants';
-import NotFound from "../NotFound/NotFound";
 
 export default function App() {
     const loggedIn = JSON.parse(localStorage.getItem('loggedIn')) || false;
@@ -27,7 +26,7 @@ export default function App() {
 
     useEffect(() => {
         if (loggedIn) {
-            mainApi.getUserInfo()
+            mainApi.getUser()
                 .then((user) => {
                     localStorage.setItem('userId', user._id);
                     setCurrentUser(user);

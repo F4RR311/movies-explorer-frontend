@@ -1,71 +1,94 @@
+import React, { useContext, useEffect, useState }  from 'react';
+import { Link, useNavigate} from 'react-router-dom';
+import useFormWithValidation from '../../hooks/useFormWithValidation';
+import Logo from '../Logo/Logo';
+import TextInput from '../TextInput/TextInput';
+import mainApi from '../../utils/MainApi';
+import UserContext from '../../contexts/UserContext';
+import { UNAUTH_ERROR_CODE } from '../../utils/constants';
 import './Login.css';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg';
-import useFormWithValidation from '../../hooks/useFormWithValidation.jsx';
 
-export default function Login({handleLogin}) {
-    const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
+export default function Login() {
+    const form = useFormWithValidation();
+    const navigate = useNavigate();
+    const [loginError, setLoginError] = useState('');
+    const [disabled, setDisabled] = useState(true);
 
-    function handleSubmit(e) {
-        e.preventDefault();
-         handleLogin(values);
-    }
+    const { setCurrentUser } = useContext(UserContext);
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+
+        setDisabled(true);
+
+        mainApi.login(form.values)
+            .then(() => mainApi.getUser())
+            .then((user) => {
+                localStorage.setItem('loggedIn', true);
+                localStorage.setItem('userId', user._id);
+
+                setCurrentUser(user);
+                navigate('/movies');
+            })
+            .catch((err) => {
+                if (err.status === UNAUTH_ERROR_CODE) {
+                    setLoginError('Неправильные почта или пароль');
+                } else {
+                    setLoginError('Нет соединения с сервером');
+                }
+            });
+    };
 
     useEffect(() => {
-        resetForm();
-    }, [resetForm]);
+        setDisabled(!form.isValid);
+    }, [form.values]);
 
     return (
-        <main className="login">
-            <form className="login__form" name="login" noValidate onSubmit={handleSubmit}>
-                <Link to="/" className="login__link">
-                    <img src={logo} alt="Логотип" className="login__logo" />
-                </Link>
-                <h1 className="login__title">Рады видеть!</h1>
-                <div className="login__labels-container">
-                    <label className="login__label">
-                        <span className="login__label-text">E-mail</span>
-                        <input
-                            name="email"
-                            className={`login__input ${errors.email && 'login__input_error'}`}
-                            onChange={handleChange}
-                            value={values.email || ''}
-                            type="email"
-                            required
-                        />
-                        <span className="login__error">{errors.email || ''}</span>
-                    </label>
-                    <label className="login__label">
-                        <span className="login__label-text">Пароль</span>
-                        <input
-                            name="password"
-                            className={`login__input ${errors.password && 'login__input_error'}`}
-                            onChange={handleChange}
-                            value={values.password || ''}
-                            type="password"
-                            required
-                        />
-                        <span className="login__error">{errors.password || ''}</span>
-                    </label>
-                </div>
+        <div className="login">
+            <div className="login__top">
+                <Logo />
+                <h2 className="login__heading login__text">Рады видеть!</h2>
+            </div>
+            <form
+                className="login__form"
+                id="login"
+                name="login"
+                onSubmit={handleSubmit}
+                noValidate
+            >
+                <TextInput
+                    name="email"
+                    label="E-mail"
+                    type="email"
+                    pattern="^[\w]+@[a-zA-Z]+\.[a-zA-Z]{1,3}$"
+                    value={form.values.email || ''}
+                    onChange={form.handleChange}
+                    errorMessage={form.errors.email}
+                />
+                <TextInput
+                    name="password"
+                    label="Пароль"
+                    type="password"
+                    value={form.values.password || ''}
+                    onChange={form.handleChange}
+                    errorMessage={form.errors.password}
+                />
+            </form>
+            <div className="login__bottom">
+                <p className="login__text login__text_color_red">{loginError}</p>
                 <button
+                    className={`login__submit-button ${disabled && 'login__submit-button_disabled'} login__text`}
                     type="submit"
-                    className={`login__button ${
-                        !isValid && 'login__button_disabled'
-                    }`}
-                    disabled={!isValid}
-
+                    form="login"
+                    disabled={disabled}
                 >
                     Войти
                 </button>
-                <span className="login__support">
-          Ещё не зарегистрированы?&nbsp;
-                    <Link to="signup" className="login__link">
-            Регистрация
-          </Link>
-        </span>
-            </form>
-        </main>
-    )
+                <div className="login__question">
+                    <p className="login__text login__text_color_grey">Ещё не зарегистрированы?</p>
+                    <Link to="/signup" className="login__link login__text">Регистрация</Link>
+                </div>
+            </div>
+        </div>
+    );
 }

@@ -36,8 +36,8 @@ export default function Movies() {
 
         if (!storedMovies) {
             getFilms()
-                .then((films) => {
-                    localStorage.setItem('movies', JSON.stringify(films));
+                .then((movies) => {
+                    localStorage.setItem('movies', JSON.stringify(movies));
                     filter(query, shorts);
                 })
                 .catch(() => {

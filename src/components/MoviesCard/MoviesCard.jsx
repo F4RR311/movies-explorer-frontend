@@ -1,22 +1,22 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './MoviesCard.css';
-import {useLocation} from 'react-router-dom';
-import {transformDuration} from '../../utils/utils.js';
-import TooltipContext from "../../contexts/TooltipContext";
-import mainApi from "../../utils/MainApi";
-import {DEFAULT_MESSAGE, MINUTS_IN_HOUR, NO_CONNECTION_MESSAGE} from "../../utils/constants";
+import { useLocation } from 'react-router-dom';
+import mainApi from '../../utils/MainApi';
+import TooltipContext from '../../contexts/TooltipContext';
+import { DEFAULT_MESSAGE, NO_CONNECTION_MESSAGE, MINUTS_IN_HOUR } from '../../utils/constants';
 
-export default function MoviesCard({movie}) {
+
+export default function MoviesCard({ movie }) {
     const [savedId, setSavedId] = useState('');
     const [saved, setSaved] = useState(false);
     const location = useLocation();
 
-    const {setTooltipMessage} = useContext(TooltipContext);
+    const { setTooltipMessage } = useContext(TooltipContext);
 
     const handleSetSaved = (evt) => {
         if (!saved) {
             const newMovie = {};
-            const {image, id} = movie;
+            const { image, id } = movie;
 
             Object.assign(newMovie, movie);
 
@@ -31,7 +31,7 @@ export default function MoviesCard({movie}) {
                 }
             });
 
-            mainApi.addNewMovie({
+            mainApi.saveFilm({
                 ...newMovie,
                 image: `https://api.nomoreparties.co/${image.url}`,
                 thumbnail: `https://api.nomoreparties.co/${image.formats.thumbnail.url}`,
@@ -58,7 +58,7 @@ export default function MoviesCard({movie}) {
                     }
                 });
         } else {
-            mainApi.deleteMovie(savedId)
+            mainApi.deleteFilm(savedId)
                 .then(() => {
                     setSaved(false);
                     const savedMovies = JSON.parse(localStorage.getItem('savedMovies'));
@@ -79,7 +79,7 @@ export default function MoviesCard({movie}) {
                         evt.target.closest('.movies-card').remove();
                     }
                 })
-                .catch(() => setTooltipMessage('NO_CONNECTION_MESSAGE'));
+                .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));
         }
     };
 
@@ -95,6 +95,7 @@ export default function MoviesCard({movie}) {
             });
         }
     }, []);
+
     return (
         <li className="movies-card">
             <div className="movies-card__info">

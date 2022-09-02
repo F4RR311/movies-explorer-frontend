@@ -19,32 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="react v-18.2 refactoring">
-      <change afterPath="$PROJECT_DIR$/src/components/TextInput/TextInput.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TextInput/TextInput.js" afterDir="false" />
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="react v-18.2 refactoring №3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutProject/AboutProject.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutProject/AboutProject.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFound/NotFound.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFound/NotFound.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFound/NotFound.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFound/NotFound.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Register/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register/Register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Promo/Promo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promo/Promo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/CurrentUserContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/UserContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useFormWithValidation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFormWithValidation.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/images/landing-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +67,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/movies-explorer-api-main" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/movies-explorer-frontend-main" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -163,7 +158,7 @@
       <workItem from="1662130430258" duration="119000" />
       <workItem from="1662131506516" duration="5968000" />
       <workItem from="1662137935682" duration="6652000" />
-      <workItem from="1662146900635" duration="3627000" />
+      <workItem from="1662146900635" duration="10636000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -333,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662136143140</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="react v-18.2 refactoring №3">
+      <created>1662150777699</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1662150777699</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,13 +369,14 @@
     <MESSAGE value="fix-like" />
     <MESSAGE value="total project refactoring" />
     <MESSAGE value="react v-18.2 refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="react v-18.2 refactoring" />
+    <MESSAGE value="react v-18.2 refactoring №3" />
+    <option name="LAST_COMMIT_MESSAGE" value="react v-18.2 refactoring №3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662147286503">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662151430405">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662147286503" />
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662151430405" />
     <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1662137745765">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -390,10 +393,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="297" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662137745765" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662136147757">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662150780048">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662136147757" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662150780048" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

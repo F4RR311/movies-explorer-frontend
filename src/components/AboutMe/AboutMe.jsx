@@ -1,5 +1,6 @@
 import './AboutMe.css';
 import avatar from '../../images/avatar.jpg';
+import Portfolio from "../Portfolio/Portfolio";
 
 export default function AboutMe() {
     return (
@@ -45,6 +46,8 @@ export default function AboutMe() {
                     />
                 </div>
             </div>
+            <Portfolio/>
         </section>
+
     );
 }

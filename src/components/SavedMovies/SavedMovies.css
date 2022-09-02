@@ -1,7 +1,20 @@
 .saved-movies {
-    display: flex;
-    background-color: #202020;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    display: grid;
+    grid-template:
+    "header" 72px
+    "search" min-content
+    "movies" 1fr
+    "footer" 172px / 100%;
+    min-height: 100vh;
+}
+
+@media (max-width: 414px) {
+    .saved-movies {
+        grid-template:
+      "header" 72px
+      "search" min-content
+      "movies" 1fr
+      "footer" 272px / 100%;
+        min-height: 1316px;
+    }
 }

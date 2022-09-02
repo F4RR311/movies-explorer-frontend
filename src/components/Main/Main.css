@@ -1,6 +1,34 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  display: grid;
+  grid-template:
+    "header" 74px
+    "promo" 493px
+    "about-project" 610px
+    "techs" 625px
+    "about-me" 1060px
+    "footer" 172px / 100%;
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template:
+      "header" 74px
+      "promo" 834px
+      "about-project" 586px
+      "techs" 567px
+      "about-me" 994px
+      "footer" 172px / 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    grid-template:
+      "header" 74px
+      "promo" 586px
+      "about-project" 641px
+      "techs" 651px
+      "about-me" 1198px
+      "footer" 270px / 100%;
+  }
 }

@@ -10,10 +10,10 @@ export default function Header() {
 
   return (
       <header className="header">
-          <div className="header__container">
+
         <Logo />
         {currentUser._id ? <Navigation /> : <UnauthLinks />}
-          </div>
+
       </header>
 
   );

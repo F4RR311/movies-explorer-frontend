@@ -10,8 +10,10 @@
 
 .movies-card__info {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  padding: 18px 18px;
+  padding:   18px;
 }
 
 .movies-card__image {
@@ -36,16 +38,22 @@
 }
 
 .movies-card__duration {
-  font-size: 13px;
-  line-height: 18px;
   color: #8b8b8b;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.18;
+  margin-top: 2px;
+  padding: 0 16px;
 }
 
 .movies-card__button {
-  width: 100px;
+  width: 30px;
   height: 30px;
-  border-radius: 30px;
-  background-color: #313131;
+
+  background-image: url("../../images/like.svg");
+  background-repeat: no-repeat;
+  background-color: initial;
+  background-position: 50% 50%;
   align-self: center;
   margin: 18px 0;
   border: none;
@@ -65,7 +73,7 @@
   background-image: url("../../images/like-active.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #ee3465;
+
 }
 
 .movies-card__delete-button {

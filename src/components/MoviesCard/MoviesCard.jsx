@@ -98,12 +98,7 @@ export default function MoviesCard({ movie }) {
 
     return (
         <li className="movies-card">
-            <div className="movies-card__info">
-                <h3 className="movies-card__heading movies-card__text">{movie.nameRU}</h3>
-                <p className="movies-card__duration movies-card__text">
-                    {`${Math.floor(movie.duration / MINUTS_IN_HOUR)}ч${movie.duration % MINUTS_IN_HOUR}м`}
-                </p>
-            </div>
+
             <a href={movie.trailerLink} target="_blank" rel="noreferrer">
                 <img
                     className="movies-card__image"
@@ -113,22 +108,30 @@ export default function MoviesCard({ movie }) {
                     alt={movie.image.name}
                 />
             </a>
-            {location.pathname !== '/saved-movies' ? (
-                <button
-                    className={`movies-card__button movies-card__save-button ${saved && 'movies-card__save-button_active'}`}
-                    type="button"
-                    aria-label="Сохранить"
-                    onClick={handleSetSaved}
-                >Сохранить
-                </button>
-            ) : (
-                <button
-                    className="movies-card__button movies-card__delete-button"
-                    type="button"
-                    aria-label="Удалить"
-                    onClick={handleSetSaved}
-                />
-            )}
+            <div className="movies-card__info">
+                <h3 className="movies-card__heading movies-card__text">{movie.nameRU}</h3>
+                {location.pathname !== '/saved-movies' ? (
+                    <button
+                        className={`movies-card__button movies-card__save-button ${saved && 'movies-card__save-button_active'}`}
+                        type="button"
+                        aria-label="Сохранить"
+                        onClick={handleSetSaved}
+                    >
+                    </button>
+                ) : (
+                    <button
+                        className="movies-card__button movies-card__delete-button"
+                        type="button"
+                        aria-label="Удалить"
+                        onClick={handleSetSaved}
+                    />
+                )}
+            </div>
+            <p className="movies-card__duration movies-card__text">
+                {`${Math.floor(movie.duration / MINUTS_IN_HOUR)}ч${movie.duration % MINUTS_IN_HOUR}м`}
+            </p>
+
         </li>
     );
 }
+

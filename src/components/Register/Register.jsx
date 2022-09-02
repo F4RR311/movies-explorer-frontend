@@ -1,7 +1,7 @@
 import './Register.css';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg';
+import Logo from '../Logo/Logo'
 import useFormWithValidation from '../../hooks/useFormWithValidation.jsx';
 
 export default function Register({ handleRegister }) {
@@ -21,7 +21,7 @@ export default function Register({ handleRegister }) {
     <main className="register">
       <form className="register__form" name="register" noValidate onSubmit={handleSubmit}>
         <Link to="/" className="register__link">
-          <img src={logo} alt="Логотип" className="register__logo" />
+        <Logo/>
         </Link>
         <h1 className="register__title">Добро пожаловать!</h1>
         <div className="register__labels-container">

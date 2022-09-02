@@ -1,24 +1,17 @@
+import React, { useEffect, useState } from 'react';
 import './Movies.css';
-import {useState, useContext, useEffect} from 'react';
-import {
-    transformMovies, // для адаптирования полей под свой бэкенд
-    filterMovies, // фильтрация начального массива всех фильмов по запросу
-    filterShortMovies, // фильтрация по длительности
-} from '../../utils/utils.js';
-import moviesApi from '../../utils/MoviesApi.js';
-import SearchForm from '../SearchForm/SearchForm.jsx';
-import MoviesCardList from '../MoviesCardList/MoviesCardList.jsx';
-import CurrentUserContext from '../../contexts/CurrentUserContext.jsx';
+import Header from '../Header/Header';
+import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import Footer from '../Footer/Footer';
+import Preloader from '../Preloader/Preloader';
+import getFilms from '../../utils/MoviesApi';
+import mainApi from '../../utils/MainApi';
+
+import { MOVVIES_MESSAGE, NOT_FOUND_MESSAGE } from '../../utils/constants';
 import {searchFilter} from "../../utils/utils";
-import getMovies from "../../utils/MoviesApi";
-import mainApi from "../../utils/MainApi";
-import Header from "../Header/Header";
-import {MOVVIES_MESSAGE, NOT_FOUND_MESSAGE} from "../../utils/constants";
 
-export default function Movies({setIsInfoTooltip}) {
-
-
-    // поиск по массиву и установка состояния
+export default function Movies() {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -42,15 +35,14 @@ export default function Movies({setIsInfoTooltip}) {
         const storedMovies = JSON.parse(localStorage.getItem('movies'));
 
         if (!storedMovies) {
-            getMovies()
+            getFilms()
                 .then((films) => {
                     localStorage.setItem('movies', JSON.stringify(films));
                     filter(query, shorts);
                 })
-                .catch(() =>
-                    setErrorMessage(MOVVIES_MESSAGE)
-                )
-
+                .catch(() => {
+                    setErrorMessage(MOVVIES_MESSAGE);
+                });
         } else {
             filter(query, shorts);
         }
@@ -62,33 +54,27 @@ export default function Movies({setIsInfoTooltip}) {
         if (!savedMovies) {
             setLoading(true);
 
-            mainApi.getSavedMovies()
-                .then((movies) => {
-                    if (movies.length > 0) {
-                        localStorage.setItem('savedMovies', JSON.stringify(movies));
+            mainApi.getFilms()
+                .then((films) => {
+                    if (films.length > 0) {
+                        localStorage.setItem('savedMovies', JSON.stringify(films));
                     }
                     setLoading(false);
                 })
-                .catch(() =>
-                    setIsInfoTooltip({
-                        isOpen: true,
-                        successful: false,
-                        text: 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.' +
-                            ' Подождите немного и попробуйте ещё раз.',
-                    })
-                )
-
+                .catch(() => {
+                    setErrorMessage(MOVVIES_MESSAGE);
+                });
         }
     }, []);
 
     return (
-        <main className="movies">
-            <SearchForm
-                handleSearch={handleSearch}
-            />
-            {loading && (
-                <MoviesCardList movies={movies} errorMessage={errorMessage}/>
-            )}
-        </main>
+        <div className="movies">
+            <Header />
+            <SearchForm handleSearch={handleSearch} />
+            {loading
+                ? <Preloader />
+                : <MoviesCardList movies={movies} errorMessage={errorMessage} />}
+            <Footer />
+        </div>
     );
 }

@@ -1,9 +1,7 @@
-import './SearchForm.css';
-import { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Checkbox from '../Checkbox/Checkbox.jsx';
-import useFormWithValidation from '../../hooks/useFormWithValidation.jsx';
-import CurrentUserContext from '../../contexts/CurrentUserContext.jsx';
+import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
+import './SearchForm.css';
 
 export default function SearchForm({ handleSearch }) {
     const [inputValue, setInputValue] = useState('');
@@ -62,24 +60,30 @@ export default function SearchForm({ handleSearch }) {
     }, []);
 
     return (
-        <section className="search">
-            <form className="search__form" name="search" noValidate onSubmit={handleSubmit}>
-                <input
-                    className="search__input"
-                    name="search"
-                    type="text"
-                    placeholder="Фильм"
-                    autoComplete="off"
-                    value={inputValue}
-                    placeholder={placeholderContent}
-                    onChange={handleInput}
-                    required
+        <form className="search-form" name="search" onSubmit={handleSubmit} noValidate>
+            <div className="search-form__container">
+                <label className="search-form__label" htmlFor="search-query">
+                    <div className="search-form__icon" htmlFor="search-query" />
+                    <input
+                        className={`search-form__input ${error && 'search-form__input_error'} search-form__text`}
+                        id="search-query"
+                        name="search-query"
+                        type="text"
+                        placeholder={placeholderContent}
+                        onChange={handleInput}
+                        value={inputValue}
+                        required
+                    />
+                </label>
+                <button className="search-form__button" type="submit" aria-label="Искать" />
+            </div>
+            <label className="search-form__checkbox" htmlFor="shorts">
+                <FilterCheckbox
+                    value={shorts}
+                    onChange={handleCheckbox}
                 />
-                {/*<span className="search__error">{errorQuery}</span>*/}
-                <button className="search__button" type="submit"></button>
-            </form>
-            <Checkbox value={shorts}
-                      onChange={handleCheckbox} />
-        </section>
-    )
+                <span className="search-form__text">Короткометражки</span>
+            </label>
+        </form>
+    );
 }

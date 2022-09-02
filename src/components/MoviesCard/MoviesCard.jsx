@@ -1,21 +1,22 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import './MoviesCard.css';
-import { useLocation } from 'react-router-dom';
-import { transformDuration } from '../../utils/utils.js';
+import {useLocation} from 'react-router-dom';
+import {transformDuration} from '../../utils/utils.js';
 import TooltipContext from "../../contexts/TooltipContext";
 import mainApi from "../../utils/MainApi";
+import {DEFAULT_MESSAGE, MINUTS_IN_HOUR, NO_CONNECTION_MESSAGE} from "../../utils/constants";
 
-export default function MoviesCard({ movie   }) {
+export default function MoviesCard({movie}) {
     const [savedId, setSavedId] = useState('');
     const [saved, setSaved] = useState(false);
     const location = useLocation();
 
-    const { setTooltipMessage } = useContext(TooltipContext);
+    const {setTooltipMessage} = useContext(TooltipContext);
 
     const handleSetSaved = (evt) => {
         if (!saved) {
             const newMovie = {};
-            const { image, id } = movie;
+            const {image, id} = movie;
 
             Object.assign(newMovie, movie);
 
@@ -51,9 +52,9 @@ export default function MoviesCard({ movie   }) {
                 })
                 .catch((err) => {
                     if (err.status === 400) {
-                        setTooltipMessage('DEFAULT_MESSAGE');
+                        setTooltipMessage(DEFAULT_MESSAGE);
                     } else {
-                        setTooltipMessage('NO_CONNECTION_MESSAGE');
+                        setTooltipMessage(NO_CONNECTION_MESSAGE);
                     }
                 });
         } else {
@@ -99,7 +100,7 @@ export default function MoviesCard({ movie   }) {
             <div className="movies-card__info">
                 <h3 className="movies-card__heading movies-card__text">{movie.nameRU}</h3>
                 <p className="movies-card__duration movies-card__text">
-                    {`${Math.floor(movie.duration / 'MINUTS_IN_HOUR')}ч${movie.duration % 'MINUTS_IN_HOUR'}м`}
+                    {`${Math.floor(movie.duration / MINUTS_IN_HOUR)}ч${movie.duration % MINUTS_IN_HOUR}м`}
                 </p>
             </div>
             <a href={movie.trailerLink} target="_blank" rel="noreferrer">

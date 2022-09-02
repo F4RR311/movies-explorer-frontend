@@ -14,7 +14,7 @@ import {
 } from "../../utils/constants";
 
 
-export default function MoviesCardList({ movies, savedMoviesList, onLikeClick, onDeleteClick }) {
+export default function MoviesCardList({ movies, errorMessage }) {
     const [maxMovies, setMaxMovies] = useState(0);
     const [step, setStep] = useState(0);
     const location = useLocation();

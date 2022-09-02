@@ -1,312 +1,57 @@
+import React, { useEffect, useMemo, useState } from 'react';
 import './App.css';
-import mainApi from '../../utils/MainApi.js';
-import CurrentUserContext from '../../contexts/CurrentUserContext.jsx';
-import {useState, useEffect} from 'react';
-import {Route, Switch, Redirect, useHistory, useLocation} from 'react-router-dom';
-import useEscapePress from '../../hooks/useEscapePress.jsx';
-import Header from '../Header/Header.jsx';
-import Main from '../Main/Main.jsx';
-import Footer from '../Footer/Footer.jsx';
-import Movies from '../Movies/Movies.jsx';
-import SavedMovies from '../SavedMovies/SavedMovies.jsx';
-import Register from '../Register/Register.jsx';
-import Login from '../Login/Login.jsx';
-import Profile from '../Profile/Profile.jsx';
-import NotFound from '../NotFound/NotFound.jsx';
-import Preloader from '../Preloader/Preloader.jsx';
-import InfoTooltip from '../InfoTooltip/InfoTooltip.jsx';
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.jsx';
+import { Routes, Route } from 'react-router-dom';
+import Main from '../Main/Main';
+import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
+import Profile from '../Profile/Profile';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 
+import UserContext from '../../contexts/CurrentUserContext';
+import mainApi from '../../utils/MainApi';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import TooltipContext from  '../../contexts/TooltipContext';
+import InfoTooltip from '../InfoTooltip/InfoTooltip';
+import { NO_CONNECTION_MESSAGE } from '../../utils/constants';
+import NotFound from "../NotFound/NotFound";
 
 export default function App() {
-    const history = useHistory();
-    const location = useLocation();
-    const [load, setLoad] = useState(false);
-    const [isLoader, setIsLoader] = useState(false);
-    const [isInfoTooltip, setIsInfoTooltip] = useState({
-        isOpen: false,
-        successful: true,
-        text: '',
-    });
-    const [isBurgerOpened, setIsBurgerOpened] = useState(false);
-    const [loggedIn, setLoggedIn] = useState(false);
+    const loggedIn = JSON.parse(localStorage.getItem('loggedIn')) || false;
+
     const [currentUser, setCurrentUser] = useState({});
-    const [savedMoviesList, setSavedMoviesList] = useState([]);
+    const [tooltipMessage, setTooltipMessage] = useState('');
 
-    const headerEndpoints = ['/movies', '/saved-movies', '/profile', '/'];
-    const footerEndpoints = ['/movies', '/saved-movies', '/'];
+    const userContext = useMemo(() => ({ currentUser, setCurrentUser }), [currentUser]);
+    const tooltipContext = useMemo(() => ({ tooltipMessage, setTooltipMessage }), [tooltipMessage]);
 
-    // нажатие по бургерному меню
-    function onClickBurger() {
-        setIsBurgerOpened(!isBurgerOpened);
-    }
-
-    useEscapePress(onClickBurger, isBurgerOpened);
-
-    //закрытие попапа с информацией
-    function closeInfoTooltip() {
-        setIsInfoTooltip({...isInfoTooltip, isOpen: false});
-    }
-
-    // кнопка назад на 404 странице
-    function goBack() {
-        history.goBack();
-    }
-
-    function handleRegister({name, email, password}) {
-        setIsLoader(true);
-        mainApi
-            .createUser(name, email, password)
-            .then(data => {
-                if (data._id) {
-                    handleLogin({email, password});
-                }
-            })
-            .catch(err =>
-                setIsInfoTooltip({
-                    isOpen: true,
-                    successful: false,
-                    text: err,
-                })
-            )
-            .finally(() => setIsLoader(false));
-    }
-
-    function handleLogin({email, password}) {
-        setIsLoader(true);
-        mainApi
-            .login(email, password)
-            .then(jwt => {
-                if (jwt.token) {
-                    localStorage.setItem('jwt', jwt.token);
-                    setLoggedIn(true);
-                    history.push('/movies');
-                    setIsInfoTooltip({
-                        isOpen: true,
-                        successful: true,
-                        text: 'Добро пожаловать!',
-                    });
-                }
-            })
-            .catch(err =>
-                setIsInfoTooltip({
-                    isOpen: true,
-                    successful: false,
-                    text: err,
-                })
-            )
-            .finally(() => setIsLoader(false));
-    }
-
-    // выход из аккаунта
-    function handleSignOut() {
-        setCurrentUser({});
-        setLoggedIn(false);
-        localStorage.clear();
-        history.push('/');
-    }
-
-    function handleProfile({name, email}) {
-        setIsLoader(true);
-        mainApi
-            .updateUser(name, email)
-            .then(newUserData => {
-                setCurrentUser(newUserData);
-                setIsInfoTooltip({
-                    isOpen: true,
-                    successful: true,
-                    text: 'Ваши данные обновлены!',
-                });
-            })
-            .catch(err =>
-                setIsInfoTooltip({
-                    isOpen: true,
-                    successful: false,
-                    text: err,
-                })
-            )
-            .finally(() => setIsLoader(false));
-    }
-
-    // cохранение фильма
-    function handleSaveMovie(movie) {
-        mainApi
-            .addNewMovie(movie)
-            .then(newMovie => setSavedMoviesList([newMovie, ...savedMoviesList]))
-            .catch((err) => {
-                setIsInfoTooltip(true);
-                if (typeof err === "string") {
-                    setIsInfoTooltip({ text: err, color: "red" });
-                } else {
-                    setIsInfoTooltip({ text: "Непредвиденная ошибка" });
-                }
-            });
-    }
-
-
-    // удаление фильма
-    function handleDeleteMovie(movie) {
-        const savedMovie = savedMoviesList.find(
-            (item) => item.movieId === movie.id || item.movieId === movie.movieId
-        );
-        mainApi
-            .deleteMovie(savedMovie._id)
-            .then(() => {
-                const newMoviesList = savedMoviesList.filter(m => {
-                    if (movie.id === m.movieId || movie.movieId === m.movieId) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                });
-                setSavedMoviesList(newMoviesList);
-            })
-            .catch(err =>
-                setIsInfoTooltip({
-                    isOpen: true,
-                    successful: false,
-                    text: err,
-                })
-            );
-    }
-
-    // проверка токена и авторизация пользователя
     useEffect(() => {
-        const path = location.pathname;
-        const jwt = localStorage.getItem('jwt');
-        if (jwt) {
-            setIsLoader(true);
-            mainApi
-                .getUserInfo()
-                .then(data => {
-                    if (data) {
-                        setLoggedIn(true);
-                        setCurrentUser(data);
-                        history.push(path);
-                    }
+        if (loggedIn) {
+            mainApi.getUserInfo()
+                .then((user) => {
+                    localStorage.setItem('userId', user._id);
+                    setCurrentUser(user);
                 })
-                .catch(err =>
-                    setIsInfoTooltip({
-                        isOpen: true,
-                        successful: false,
-                        text: err,
-                    })
-                )
-                .finally(() => {
-                    setIsLoader(false);
-                    setLoad(true);
-                });
-        } else {
-            setLoad(true);
+                .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));
         }
     }, []);
 
-    // получение информации о пользователе
-    useEffect(() => {
-        if (loggedIn) {
-            setIsLoader(true);
-            mainApi
-                .getUserInfo()
-                .then(res => setCurrentUser(res))
-                .catch(err =>
-                    setIsInfoTooltip({
-                        isOpen: true,
-                        successful: false,
-                        text: err,
-                    })
-                )
-                .finally(() => setIsLoader(false));
-        }
-    }, [loggedIn]);
-
-    // получение массива сохраненных фильмов
-    useEffect(() => {
-        if (loggedIn && currentUser) {
-            mainApi
-                .getSavedMovies()
-                .then(data => {
-                    const UserMoviesList = data.filter(m => m.owner === currentUser._id);
-                    setSavedMoviesList(UserMoviesList);
-                })
-                .catch(err =>
-                    setIsInfoTooltip({
-                        isOpen: true,
-                        successful: false,
-                        text: err,
-                    })
-                );
-        }
-    }, [currentUser, loggedIn]);
-
     return (
         <div className="app">
-            {!load ? (
-                <Preloader isOpen={isLoader}/>
-            ) : (
-                <CurrentUserContext.Provider value={currentUser}>
-                    <Route exact path={headerEndpoints}>
-                        <Header
-                            loggedIn={loggedIn}
-                            onClickBurger={onClickBurger}
-                            isBurgerOpened={isBurgerOpened}
-                        />
-                    </Route>
-                    <Switch>
-                        <Route exact path='/'>
-                            <Main/>
-                        </Route>
-                        <Route exact path='/signup'>
-                            {!loggedIn ? (
-                                <Register handleRegister={handleRegister}/>
-                            ) : (
-                                <Redirect to='/'/>
-                            )}
-                        </Route>
-                        <Route exact path='/signin'>
-                            {!loggedIn ? (
-                                <Login handleLogin={handleLogin}/>
-                            ) : (
-                                <Redirect to='/'/>
-                            )}
-                        </Route>
-                        <ProtectedRoute
-                            path='/movies'
-                            component={Movies}
-                            loggedIn={loggedIn}
-                            setIsLoader={setIsLoader}
-                            setIsInfoTooltip={setIsInfoTooltip}
-                            savedMoviesList={savedMoviesList}
-                            onLikeClick={handleSaveMovie}
-                            onDeleteClick={handleDeleteMovie}
-                        />
-                        <ProtectedRoute
-                            path='/saved-movies'
-                            component={SavedMovies}
-                            loggedIn={loggedIn}
-                            savedMoviesList={savedMoviesList}
-                            onDeleteClick={handleDeleteMovie}
-                            setIsInfoTooltip={setIsInfoTooltip}
-                        />
-                        <ProtectedRoute
-                            path='/profile'
-                            component={Profile}
-                            loggedIn={loggedIn}
-                            handleProfile={handleProfile}
-                            handleSignOut={handleSignOut}
-                        />
-                        <Route path='*'>
-                            <NotFound goBack={goBack}/>
-                        </Route>
-                    </Switch>
-                    <Route exact path={footerEndpoints}>
-                        <Footer/>
-                    </Route>
-                    <InfoTooltip
-                        status={isInfoTooltip}
-                        onClose={closeInfoTooltip}
-                    />
-                </CurrentUserContext.Provider>
-            )}
+            <UserContext.Provider value={userContext}>
+                <TooltipContext.Provider value={tooltipContext}>
+                    <InfoTooltip message={tooltipMessage} />
+                    <Routes>
+                        <Route exact path="/" element={<Main />} />
+                        <Route path="/movies" element={<ProtectedRoute allowed={loggedIn}><Movies /></ProtectedRoute>} />
+                        <Route path="/saved-movies" element={<ProtectedRoute allowed={loggedIn}><SavedMovies /></ProtectedRoute>} />
+                        <Route path="/profile" element={<ProtectedRoute allowed={loggedIn}><Profile /></ProtectedRoute>} />
+                        <Route path="/signup" element={<ProtectedRoute allowed={!loggedIn}><Register /></ProtectedRoute>} />
+                        <Route path="/signin" element={<ProtectedRoute allowed={!loggedIn}><Login /></ProtectedRoute>} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </TooltipContext.Provider>
+            </UserContext.Provider>
         </div>
     );
 }

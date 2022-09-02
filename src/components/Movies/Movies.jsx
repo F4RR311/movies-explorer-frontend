@@ -10,15 +10,13 @@ import SearchForm from '../SearchForm/SearchForm.jsx';
 import MoviesCardList from '../MoviesCardList/MoviesCardList.jsx';
 import CurrentUserContext from '../../contexts/CurrentUserContext.jsx';
 import {searchFilter} from "../../utils/utils";
+import getMovies from "../../utils/MoviesApi";
+import mainApi from "../../utils/MainApi";
+import Header from "../Header/Header";
+import {MOVVIES_MESSAGE, NOT_FOUND_MESSAGE} from "../../utils/constants";
 
-export default function Movies({setIsLoader, setIsInfoTooltip, savedMoviesList, onLikeClick, onDeleteClick}) {
-    const currentUser = useContext(CurrentUserContext);
+export default function Movies({setIsInfoTooltip}) {
 
-    const [shortMovies, setShortMovies] = useState(false); // состояние чекбокса
-    const [initialMovies, setInitialMovies] = useState([]); // фильмы полученные с запроса
-    const [filteredMovies, setFilteredMovies] = useState([]); // отфильтрованные по чекбоксу и запросу фильмы
-    const [NotFound, setNotFound] = useState(false); // если по запросу ничего не найдено - скроем фильмы
-    const [isAllMovies, setIsAllMovies] = useState([]); // все фильмы от сервера, для единоразового обращения к нему
 
     // поиск по массиву и установка состояния
     const [movies, setMovies] = useState([]);
@@ -30,7 +28,7 @@ export default function Movies({setIsLoader, setIsInfoTooltip, savedMoviesList, 
         const filtered = searchFilter(storedMovies, query, shorts);
 
         if (filtered.length === 0) {
-            setErrorMessage('Ничего не найдено');
+            setErrorMessage(NOT_FOUND_MESSAGE);
         }
 
         setMovies(filtered);
@@ -44,18 +42,13 @@ export default function Movies({setIsLoader, setIsInfoTooltip, savedMoviesList, 
         const storedMovies = JSON.parse(localStorage.getItem('movies'));
 
         if (!storedMovies) {
-            moviesApi.getMovies()
+            getMovies()
                 .then((films) => {
                     localStorage.setItem('movies', JSON.stringify(films));
                     filter(query, shorts);
                 })
                 .catch(() =>
-                    setIsInfoTooltip({
-                        isOpen: true,
-                        successful: false,
-                        text: 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.' +
-                            ' Подождите немного и попробуйте ещё раз.',
-                    })
+                    setErrorMessage(MOVVIES_MESSAGE)
                 )
 
         } else {
@@ -69,10 +62,10 @@ export default function Movies({setIsLoader, setIsInfoTooltip, savedMoviesList, 
         if (!savedMovies) {
             setLoading(true);
 
-            moviesApi.getMovies()
-                .then((films) => {
-                    if (films.length > 0) {
-                        localStorage.setItem('savedMovies', JSON.stringify(films));
+            mainApi.getSavedMovies()
+                .then((movies) => {
+                    if (movies.length > 0) {
+                        localStorage.setItem('savedMovies', JSON.stringify(movies));
                     }
                     setLoading(false);
                 })
@@ -94,9 +87,7 @@ export default function Movies({setIsLoader, setIsInfoTooltip, savedMoviesList, 
                 handleSearch={handleSearch}
             />
             {loading && (
-                <MoviesCardList
-                    movies={movies} errorMessage={errorMessage}
-                />
+                <MoviesCardList movies={movies} errorMessage={errorMessage}/>
             )}
         </main>
     );

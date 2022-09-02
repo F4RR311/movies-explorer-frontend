@@ -1,33 +1,20 @@
+import React, { useContext, useEffect } from 'react';
 import './InfoTooltip.css';
-import useEscapePress from '../../hooks/useEscapePress.jsx';
+import TooltipContext from '../../contexts/TooltipContext';
+import { TOOLTIP_SHOWN_DURATION_MS } from '../../utils/constants';
 
-export default function InfoTooltip({ onClose, status: { isOpen, successful, text } }) {
-  function handleClickOverlay(e) {
-    e.stopPropagation();
-  }
+export default function InfoTooltip({ message }) {
+  const { setTooltipMessage } = useContext(TooltipContext);
 
-  useEscapePress(onClose, isOpen);
+  useEffect(() => {
+    setTimeout(() => {
+      setTooltipMessage('');
+    }, TOOLTIP_SHOWN_DURATION_MS);
+  });
 
   return (
-    <div
-      className={`info-tooltip ${isOpen && 'info-tooltip_opened'}`}
-      onClick={onClose}
-    >
-      <div className="info-tooltip__container" onClick={handleClickOverlay}>
-        <div
-          className={`info-tooltip__status ${
-            successful
-              ? 'info-tooltip__status_success'
-              : 'info-tooltip__status_fail'
-          }`}
-        ></div>
-        <h2 className="info-tooltip__title">{text}</h2>
-        <button
-          type="button"
-          className="info-tooltip__close-button"
-          onClick={onClose}
-        ></button>
+      <div className={`info-tooltip ${message && 'info-tooltip_opened'}`}>
+        <p className="info-tooltip__text">{message}</p>
       </div>
-    </div>
   );
 }

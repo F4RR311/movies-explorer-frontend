@@ -1,27 +1,6 @@
 import { MOVIES_URL } from './constants';
 
-class MoviesApi {
-    constructor({ baseUrl }) {
-        this._baseUrl = baseUrl;
-    }
-
-    // проверка статуса запроса
-    async _requestResult(res) {
-        const result = await res.json();
-        return res.ok ? result : Promise.reject(res);
-    }
-
-    // регистрация
-    getMovies() {
-        return fetch(`${this._baseUrl}`, {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        }).then((res) => this._requestResult(res));
-    }
+export default function getMovies() {
+    return fetch(MOVIES_URL, { method: 'GET' })
+        .then((res) => (res.ok ? res.json() : Promise.reject(res)));
 }
-
-const moviesApi = new MoviesApi({
-    baseUrl: MOVIES_URL,
-});
-
-export default moviesApi;

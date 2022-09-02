@@ -1,11 +1,9 @@
-import { Route, Redirect } from 'react-router-dom';
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
-export default function ProtectedRoute({ component: Component, ...props }) {
-  return (
-    <Route>
-      {
-        () => (props.loggedIn === true) ? <Component {...props} /> : <Redirect to='/' />
-      }
-    </Route>
-  )
+export default function ProtectedRoute({ children, allowed }) {
+  if (allowed) {
+    return children;
+  }
+  return <Navigate to="/" />;
 }

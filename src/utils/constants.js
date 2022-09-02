@@ -11,4 +11,11 @@ export const MAX_MOVIES_STEP_1280 = 4;
 export const MAX_MOVIES_STEP_990 = 3;
 export const MAX_MOVIES_STEP_DEFAULT = 2;
 
+export const MINUTS_IN_HOUR = 60;
 
+
+export const DEFAULT_MESSAGE = 'Упс! Что-то пошло не так...';
+export const NO_CONNECTION_MESSAGE = 'Нет соединения с сервером';
+export const NOT_FOUND_MESSAGE= 'Ничего не найдено';
+export const MOVVIES_MESSAGE = 'Во время запроса произошла ошибка.';
+export const TOOLTIP_SHOWN_DURATION_MS = 4000;

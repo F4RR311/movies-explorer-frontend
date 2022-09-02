@@ -19,16 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="fix-like">
-      <change afterPath="$PROJECT_DIR$/src/contexts/TooltipContext.js" afterDir="false" />
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="total project refactoring">
+      <change afterPath="$PROJECT_DIR$/src/images/burger.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Checkbox/Checkbox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Checkbox/Checkbox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InfoTooltip/InfoTooltip.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InfoTooltip/InfoTooltip.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InfoTooltip/InfoTooltip.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InfoTooltip/InfoTooltip.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/landing-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/MoviesApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MoviesApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +66,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/contexts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -80,6 +90,16 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="eject" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="eject" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -90,6 +110,22 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="predeploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="predeploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.predeploy" />
+        <item itemvalue="npm.eject" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,7 +152,9 @@
       <workItem from="1661894995920" duration="28000" />
       <workItem from="1661976237088" duration="12000" />
       <workItem from="1661976338397" duration="264000" />
-      <workItem from="1662052104183" duration="14419000" />
+      <workItem from="1662052104183" duration="17515000" />
+      <workItem from="1662130430258" duration="119000" />
+      <workItem from="1662131506516" duration="2377000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -265,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661891054508</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="total project refactoring">
+      <created>1662067368043</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1662067368043</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,32 +342,33 @@
     <MESSAGE value="readme+https" />
     <MESSAGE value="readme" />
     <MESSAGE value="fix-like" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix-like" />
+    <MESSAGE value="total project refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="total project refactoring" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662064000477">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662130509411">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662064000477" />
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1661894816295">
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662130509411" />
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1662132690444">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661894816295" />
-    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1661894816295">
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662132690444" />
+    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1662132690444">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.center/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661894816295" />
-    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1661894816295">
+    <state width="1877" height="297" key="GridCell.Tab.0.center/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662132690444" />
+    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1662132690444">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.left/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661894816295" />
-    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1661894816295">
+    <state width="1877" height="297" key="GridCell.Tab.0.left/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662132690444" />
+    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1662132690444">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661894816295" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661891056982">
+    <state width="1877" height="297" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662132690444" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662067372194">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661891056982" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662067372194" />
   </component>
 </project>

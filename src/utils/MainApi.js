@@ -1,4 +1,4 @@
-import { BASE_URL } from './constants';
+import { API_URL } from './constants';
 
 class MainApi {
     constructor(url) {
@@ -50,6 +50,6 @@ class MainApi {
     }
 }
 
-const mainApi = new MainApi(BASE_URL);
+const mainApi = new MainApi(API_URL);
 
 export default mainApi;

@@ -1,5 +1,5 @@
-export const API_URL = 'https://api.f4rr311.nomoredomains.sbs';
-//export const API_URL = 'http://localhost:3000';
+//export const API_URL = 'https://api.f4rr311.nomoredomains.sbs';
+export const API_URL = 'http://localhost:3000';
 export const MOVIES_URL = 'https://api.nomoreparties.co/beatfilm-movies';
 export const SHORTMOVIES_DURATION = 40;
 export const MAX_MOVIES_1280 = 12;

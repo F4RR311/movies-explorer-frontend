@@ -24,6 +24,8 @@ export default function App() {
     const userContext = useMemo(() => ({ currentUser, setCurrentUser }), [currentUser]);
     const tooltipContext = useMemo(() => ({ tooltipMessage, setTooltipMessage }), [tooltipMessage]);
 
+
+
     useEffect(() => {
         if (loggedIn) {
             mainApi.getUser()
@@ -34,6 +36,7 @@ export default function App() {
                 .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));
         }
     }, []);
+
 
     return (
         <div className="app">

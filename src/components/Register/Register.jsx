@@ -23,7 +23,7 @@ export default function Register() {
 
     mainApi.register(form.values)
         .then((user) => mainApi.login({ email: user.email, password: form.values.password }))
-        .then(() => mainApi.getUser())
+
         .then((user) => {
           localStorage.setItem('loggedIn', true);
           localStorage.setItem('userId', user._id);
@@ -31,6 +31,7 @@ export default function Register() {
           setCurrentUser(user);
           navigate('/movies');
         })
+        .then(() => mainApi.getUser())
         .catch((err) => {
           if (err.status === CONFLICT_ERROR_CODE) {
             setRegisterError('Данный email уже зарегистрирован');

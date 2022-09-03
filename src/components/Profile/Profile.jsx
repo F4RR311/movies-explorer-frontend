@@ -22,7 +22,7 @@ export default function Profile() {
 
   const { setTooltipMessage } = useContext(TooltipContext);
 
-  const handleSignuot = () => {
+  const handleSignout = () => {
     mainApi.logout()
         .then(() => {
           setCurrentUser({});
@@ -120,7 +120,7 @@ export default function Profile() {
               <button
                   className="profile__button profile__text profile__text_color_red"
                   type="button"
-                  onClick={handleSignuot}
+                  onClick={handleSignout}
               >
                 Выйти из аккаунта
               </button>

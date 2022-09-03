@@ -19,13 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="react v-18.2 refactoring №5">
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="react v-18.2 refactoring №6">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/landing-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +146,7 @@
       <workItem from="1662137935682" duration="6652000" />
       <workItem from="1662146900635" duration="12757000" />
       <workItem from="1662160029023" duration="3598000" />
-      <workItem from="1662193900058" duration="4236000" />
+      <workItem from="1662193900058" duration="10167000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -340,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662158712260</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="react v-18.2 refactoring №6">
+      <created>1662201825521</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1662201825522</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +381,8 @@
     <MESSAGE value="react v-18.2 refactoring №3" />
     <MESSAGE value="react v-18.2 refactoring №4" />
     <MESSAGE value="react v-18.2 refactoring №5" />
-    <option name="LAST_COMMIT_MESSAGE" value="react v-18.2 refactoring №5" />
+    <MESSAGE value="react v-18.2 refactoring №6" />
+    <option name="LAST_COMMIT_MESSAGE" value="react v-18.2 refactoring №6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="408" key="#ESLint" timestamp="1662163592087">
@@ -404,10 +409,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="297" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662137745765" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662158715806">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662201829029">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662158715806" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662201829029" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -33,7 +33,7 @@ export default function App() {
                 })
                 .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));
         }
-    }, []);
+    }, [loggedIn]);
 
     return (
         <div className="app">

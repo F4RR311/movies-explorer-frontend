@@ -24,10 +24,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Register/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/movies-explorer-frontend-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Projects ReactJavaScriprt/my-blog-backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -154,7 +151,7 @@
       <workItem from="1662193900058" duration="11310000" />
       <workItem from="1662212677027" duration="1307000" />
       <workItem from="1662214448490" duration="1138000" />
-      <workItem from="1662215747659" duration="8804000" />
+      <workItem from="1662215747659" duration="10711000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -366,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662218779422</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix">
+      <created>1662228187357</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1662228187357</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,10 +415,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="828" y="408" key="#ESLint/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662163592087" />
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662227481368">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662228659985">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662227481368" />
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662228659985" />
     <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1662137745765">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -431,10 +435,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="297" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662137745765" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662218780414">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662228190176">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662218780414" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662228190176" />
     <state x="-1489" y="147" width="672" height="678" key="search.everywhere.popup" timestamp="1662224004881">
       <screen x="-1920" y="0" width="1536" height="826" />
     </state>

@@ -23,15 +23,17 @@ export default function Register() {
 
     mainApi.register(form.values)
         .then((user) => mainApi.login({ email: user.email, password: form.values.password }))
-
-        .then((user) => {
-          localStorage.setItem('loggedIn', true);
-          localStorage.setItem('userId', user._id);
-
-          setCurrentUser(user);
-          navigate('/movies');
-        })
         .then(() => mainApi.getUser())
+        .then((user) => {
+            if(user){
+                localStorage.setItem('loggedIn', true);
+                localStorage.setItem('userId', user._id);
+
+                setCurrentUser(user);
+                navigate('/movies');
+            }
+
+        })
         .catch((err) => {
           if (err.status === CONFLICT_ERROR_CODE) {
             setRegisterError('Данный email уже зарегистрирован');

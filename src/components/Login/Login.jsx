@@ -22,14 +22,17 @@ export default function Login() {
         setDisabled(true);
 
         mainApi.login(form.values)
-
-            .then((user) => {
-                localStorage.setItem('loggedIn', true);
-                localStorage.setItem('userId', user._id);
-                setCurrentUser(user);
-                navigate('/movies');
-            })
             .then(() => mainApi.getUser())
+            .then((user) => {
+                if(user){
+                    localStorage.setItem('loggedIn', true);
+                    localStorage.setItem('userId', user._id);
+
+                    setCurrentUser(user);
+                    navigate('/movies');
+                }
+
+            })
             .catch((err) => {
                 if (err.status === UNAUTH_ERROR_CODE) {
                     setLoginError('Неправильные почта или пароль');

@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="react v-18.2 refactoring №4">
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="react v-18.2 refactoring №5">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/images/landing-logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
@@ -52,23 +55,26 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/movies-explorer-frontend-main" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\contexts" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\node_modules" />
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\hooks" />
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -141,7 +147,9 @@
       <workItem from="1662130430258" duration="119000" />
       <workItem from="1662131506516" duration="5968000" />
       <workItem from="1662137935682" duration="6652000" />
-      <workItem from="1662146900635" duration="11557000" />
+      <workItem from="1662146900635" duration="12757000" />
+      <workItem from="1662160029023" duration="3598000" />
+      <workItem from="1662193900058" duration="4236000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -325,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662157722068</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="react v-18.2 refactoring №5">
+      <created>1662158712260</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1662158712260</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,13 +376,18 @@
     <MESSAGE value="react v-18.2 refactoring" />
     <MESSAGE value="react v-18.2 refactoring №3" />
     <MESSAGE value="react v-18.2 refactoring №4" />
-    <option name="LAST_COMMIT_MESSAGE" value="react v-18.2 refactoring №4" />
+    <MESSAGE value="react v-18.2 refactoring №5" />
+    <option name="LAST_COMMIT_MESSAGE" value="react v-18.2 refactoring №5" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662151430405">
+    <state x="828" y="408" key="#ESLint" timestamp="1662163592087">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662151430405" />
+    <state x="828" y="408" key="#ESLint/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662163592087" />
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662201709960">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662201709960" />
     <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1662137745765">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
@@ -384,17 +404,16 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state width="1877" height="297" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662137745765" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662157724420">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662158715806">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662157724420" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662158715806" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.jsx</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

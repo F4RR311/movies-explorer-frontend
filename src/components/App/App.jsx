@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, { useEffect, useMemo, useState} from 'react';
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
 import Main from '../Main/Main';
@@ -24,31 +24,19 @@ export default function App() {
     const userContext = useMemo(() => ({currentUser, setCurrentUser}), [currentUser]);
     const tooltipContext = useMemo(() => ({tooltipMessage, setTooltipMessage}), [tooltipMessage]);
 
-
-    // useEffect(() => {
-    //     if (loggedIn) {
-    //         mainApi.getUser()
-    //             .then((user) => {
-    //                 if (user) {
-    //
-    //                     setCurrentUser(user);
-    //                 }
-    //
-    //             })
-    //             .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));
-    //     }
-    // }, []);
     useEffect(() => {
-        const fetchUser = async () => {
-            if (loggedIn) {
-                const user = await mainApi.getUser()
-                localStorage.setItem('userId', user._id);
-                setCurrentUser(user);
-            }
-
+        if (loggedIn) {
+            mainApi.getUser(loggedIn)
+                .then((user) => {
+                    if (user) {
+                        localStorage.setItem('userId', user._id);
+                        setCurrentUser(user);
+                    }
+                })
+                .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));
         }
-        fetchUser()
-    }, [])
+    }, []);
+
     return (
         <div className="app">
             <UserContext.Provider value={userContext}>

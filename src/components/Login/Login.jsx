@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState }  from 'react';
-import { Link, useNavigate} from 'react-router-dom';
+import React, {useContext, useEffect, useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import useFormWithValidation from '../../hooks/useFormWithValidation';
 import Logo from '../Logo/Logo';
 import TextInput from '../TextInput/TextInput';
 import mainApi from '../../utils/MainApi';
 import UserContext from '../../contexts/UserContext';
-import { UNAUTH_ERROR_CODE } from '../../utils/constants';
+import {UNAUTH_ERROR_CODE} from '../../utils/constants';
 import './Login.css';
 
 export default function Login() {
@@ -14,24 +14,21 @@ export default function Login() {
     const [loginError, setLoginError] = useState('');
     const [disabled, setDisabled] = useState(true);
 
-    const { setCurrentUser } = useContext(UserContext);
+    const {setCurrentUser} = useContext(UserContext);
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-
         setDisabled(true);
 
         mainApi.login(form.values)
             .then(() => mainApi.getUser())
             .then((user) => {
-                if(user){
+                if (user) {
                     localStorage.setItem('loggedIn', true);
                     localStorage.setItem('userId', user._id);
-
                     setCurrentUser(user);
                     navigate('/movies');
                 }
-
             })
             .catch((err) => {
                 if (err.status === UNAUTH_ERROR_CODE) {
@@ -46,10 +43,11 @@ export default function Login() {
         setDisabled(!form.isValid);
     }, [form.values]);
 
+
     return (
         <div className="login">
             <div className="login__top">
-                <Logo />
+                <Logo/>
                 <h2 className="login__heading login__text">Рады видеть!</h2>
             </div>
             <form

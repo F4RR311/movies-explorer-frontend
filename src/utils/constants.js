@@ -15,6 +15,7 @@ export const MAX_MOVIES_STEP_DEFAULT = 2;
 export const MINUTS_IN_HOUR = 60;
 
 export const SUCCESS__UPDATE_MESSAGE = 'Данные успешно обновлены';
+export const SUCCESS__ENTER= 'Успешный вход';
 export const DEFAULT_MESSAGE = 'Упс! Что-то пошло не так...';
 export const NO_CONNECTION_MESSAGE = 'Нет соединения с сервером';
 export const NOT_FOUND_MESSAGE = 'Ничего не найдено';

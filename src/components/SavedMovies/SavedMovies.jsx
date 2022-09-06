@@ -36,7 +36,6 @@ export default function SavedMovies() {
 
     useEffect(() => {
         setLoading(true);
-
         mainApi.getFilms()
             .then((savedMovies) => {
                 const user = localStorage.getItem('userId');

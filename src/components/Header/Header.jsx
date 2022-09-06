@@ -10,8 +10,7 @@ export default function Header() {
 
   return (
       <header className="header">
-ascsacasc
-        <Logo />
+         <Logo />
         {currentUser._id ? <Navigation /> : <UnauthLinks />}
 
       </header>

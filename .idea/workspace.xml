@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="fix">
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="debbuging">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +155,7 @@
       <workItem from="1662301651869" duration="11907000" />
       <workItem from="1662330014304" duration="203000" />
       <workItem from="1662401732044" duration="8090000" />
-      <workItem from="1662487908027" duration="4249000" />
+      <workItem from="1662487908027" duration="7728000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -417,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662494410524</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="debbuging">
+      <created>1662494669371</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1662494669371</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +463,8 @@
     <MESSAGE value="async" />
     <MESSAGE value="fix-cookie" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="debbuging" />
+    <option name="LAST_COMMIT_MESSAGE" value="debbuging" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="408" key="#ESLint" timestamp="1662163592087">
@@ -492,10 +499,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="733" y="322" key="SettingsEditor/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662301628516" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662494413200">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662494673003">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662494413200" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662494673003" />
     <state x="616" y="238" key="run.anything.popup" timestamp="1662322143206">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

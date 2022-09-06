@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="fix">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SavedMovies/SavedMovies.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +156,7 @@
       <workItem from="1662301651869" duration="11907000" />
       <workItem from="1662330014304" duration="203000" />
       <workItem from="1662401732044" duration="8090000" />
-      <workItem from="1662487908027" duration="3975000" />
+      <workItem from="1662487908027" duration="4249000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -408,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662494152862</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fix">
+      <created>1662494410524</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1662494410524</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,10 +492,10 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="733" y="322" key="SettingsEditor/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662301628516" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662494156420">
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662494413200">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662494156420" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662494413200" />
     <state x="616" y="238" key="run.anything.popup" timestamp="1662322143206">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

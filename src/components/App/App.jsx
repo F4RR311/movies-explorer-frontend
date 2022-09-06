@@ -31,7 +31,6 @@ export default function App() {
                     if (user) {
                         localStorage.setItem('userId', user._id);
                         setCurrentUser(user);
-
                     }
                 })
                 .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));

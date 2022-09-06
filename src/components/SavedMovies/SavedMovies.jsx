@@ -74,6 +74,7 @@ export default function SavedMovies() {
         }
         setError(false);
         setPlaceholderContent('Фильм');
+        localStorage.setItem('query-saved', inputValue);
         handleSearch(inputValue, shorts);
     };
 

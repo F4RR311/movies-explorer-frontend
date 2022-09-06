@@ -6,7 +6,6 @@ import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
 import getFilms from '../../utils/MoviesApi';
 import mainApi from '../../utils/MainApi';
-
 import {MOVVIES_MESSAGE, NOT_FOUND_MESSAGE} from '../../utils/constants';
 import {searchFilter} from "../../utils/utils";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";

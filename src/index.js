@@ -3,15 +3,16 @@ import './vendor/normalize.css';
 import './index.css'
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './components/App/App.jsx';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './index.css';
+import App from './components/App/App';
 
-ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+
+        <Router>
             <App />
-        </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById('root')
+        </Router>
+
 );

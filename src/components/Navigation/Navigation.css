@@ -1,167 +1,174 @@
 .navigation {
-    display: flex;
-    align-items: center;
     position: relative;
 }
 
-.navigation__list {
-    display: flex;
-    padding: 0;
+.navigation__links {
+    list-style: none;
     margin: 0;
-    list-style-type: none;
-    align-items: center;
-    gap: 30px;
-    transition: all .6s ease;
-    z-index: 3;
-}
-
-.navigation__list_logged {
-    gap: 20px;
-}
-
-.navigation__link {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.29;
-    text-decoration: none;
-    color: #fff;
+    padding: 0;
+    height: 100%;
     display: flex;
     align-items: center;
-    transition: all .3s ease;
+    gap: 20px;
+    transition: 0.4s;
 }
 
-.navigation__link:hover {
-    opacity: .7;
-}
-
-.navigation__link_active_desktop {
-    font-weight: 500;
-}
-
-.navigation__link_active_mobile {
-    border-bottom: 2px solid #fff;
-}
-
-.navigation__link.navigation__link_landing {
-    font-size: 12px;
-    line-height: 1.33;
-    font-weight: 500;
-}
-
-.navigation__link_signin {
-    color: black;
-    padding: 8px 20px;
-    background-color: #3ddc84;
+.navigation__link-item {
+    height: 32px;
+    display: flex;
+    align-items: center;
     border-radius: 3px;
 }
 
-.navigation__link_type_account {
-    position: relative;
-    margin-left: 24px;
-    padding-left: 15px;
-    padding-right: 34px;
-    min-height: 30px;
-    font-weight: 500;
+.navigation__link {
     font-size: 14px;
-    line-height: 1.14;
-    box-shadow: 0 3px 14px rgba(0, 0, 0, .08);
-    border-radius: 40px;
+    line-height: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
-.navigation__link_type_account::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 100%;
-    border-radius: 50px;
-    background-color: #313131;
-    background-image: url('../../images/profile.svg');
-    background-repeat: no-repeat;
+.navigation__link:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.navigation__link_hidden {
+    display: none;
+}
+
+.navigation__button {
+    background: none;
+    padding: 0;
+    border: 0;
     background-position: center;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 800px) {
+.navigation__show-button {
+    width: 44px;
+    height: 44px;
+    background-image: url("../../images/burger.svg");
+    display: none;
+}
+
+.navigation__close-button {
+    width: 22px;
+    height: 22px;
+    background-image: url("../../images/close-button.svg");
+    display: none;
+    justify-self: flex-end;
+    margin: 25px;
+}
+
+.account {
+    margin: 0;
+    margin-left: 30px;
+    align-self: flex-end;
+    border: 2px solid rgba(170, 170, 170, 0.2);
+    border-radius: 50px;
+}
+
+.account__link {
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: 0.2s;
+}
+
+.account__link:hover {
+    opacity: 60%;
+}
+
+.account__link_marked {
+    font-weight: 500;
+}
+
+.account__text {
+    margin: 0;
+}
+
+.account__icon {
+    width: 12px;
+    height: 14px;
+    background-image: url("../../images/profile.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .navigation__show-button {
+        display: block;
+    }
+
+    .navigation__links {
+        display: grid;
+        grid-template-rows: 155px repeat(2, min-content) 1fr;
+        justify-items: center;
+        align-items: flex-start;
+        gap: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        width: 0;
+        max-width: 100vw;
+        height: 100vh;
+        background-color: #202020;
+        z-index: 5;
+    }
+
+    .navigation__links_opened {
+        width: 520px;
+    }
+
+    .navigation__link-item {
+        margin-bottom: 18px;
+    }
+
     .navigation__link {
         font-weight: 500;
         font-size: 18px;
-        line-height: 1.22;
+        line-height: 22px;
+        text-align: center;
+        color: #ffffff;
     }
 
-    .navigation__list_logged {
-        gap: 28px;
-        position: absolute;
-        top: 0;
-        flex-direction: column;
-        height: 100vh;
-        width: 67%;
-        background-color: #202020;
+    .navigation__link_hidden {
+        display: inline;
     }
 
-    .navigation__link_type_account {
-        margin: 0;
+    .navigation__close-button {
+        display: block;
     }
 
-    .navigation__item:last-child {
-        margin: auto 0 90px 0;
-    }
-
-    .navigation__item:first-child {
-        margin-top: 159px;
-    }
-
-    .navigation__list_state_opened {
-        right: 0;
-        visibility: visible;
-    }
-
-    .navigation__list_state_closed {
-        right: -100%;
-        visibility: hidden;
-    }
-
-    .navigation_state_opened {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, .3);
-        justify-content: flex-end;
-        transition: all .3s ease;
-        z-index: 3;
-    }
-
-    .navigation_state_closed {
-        position: static;
+    .account {
+        margin-left: 0;
+        margin-bottom: 90px;
     }
 }
 
-@media screen and (max-width: 400px) {
-    .navigation__list {
-        gap: 14px;
+@media (max-width: 414px) {
+    .navigation__links {
+        grid-template-rows: 145px repeat(2, min-content) 1fr;
+        gap: 0;
     }
 
-    .navigation__link.navigation__link_landing {
-        font-size: 10px;
-        line-height: 1.6;
+    .navigation__link-item {
+        height: 26px;
+        margin-bottom: 20px;
     }
 
-    .navigation__link_signin {
-        padding: 5px 12px;
+    .navigation__close-button {
+        margin: 16px;
     }
 
-    .navigation__list_logged {
-        gap: 24px;
-        width: 100%;
-    }
-
-    .navigation__item:first-child {
-        margin-top: 144px;
-    }
-
-    .navigation__item:last-child {
-        margin-bottom: 46px;
+    .account {
+        margin-bottom: 50px;
     }
 }

@@ -1,66 +1,132 @@
+import React, { useContext, useEffect, useState } from 'react';
+import Header from '../Header/Header';
 import './Profile.css';
-import { useEffect } from 'react';
-import useFormWithValidation from '../../hooks/useFormWithValidation.jsx';
+import { useNavigate } from 'react-router-dom';
+import mainApi from '../../utils/MainApi';
+import useFormWithValidation from '../../hooks/useFormWithValidation';
+import UserContext from '../../contexts/UserContext';
+import TooltipContext from '../../contexts/TooltipContext';
+import {
+  CONFLICT_ERROR_CODE,
+  EMAIL_EXIST_MESSAGE,
+  NO_CONNECTION_MESSAGE,
+  SUCCESS__UPDATE_MESSAGE,
+} from '../../utils/constants';
 
 export default function Profile() {
-  const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
+  const form = useFormWithValidation();
+  const navigate = useNavigate();
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const [disabled, setDisabled] = useState(true);
+  const [message, setMessage] = useState('');
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  const { setTooltipMessage } = useContext(TooltipContext);
 
-  }
+  const handleSignout = () => {
+    mainApi.logout()
+        .then(() => {
+          setCurrentUser({});
+          localStorage.clear();
+          navigate('/');
+        })
+        .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));
+  };
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    setDisabled(true);
+
+    mainApi.patchUser(form.values)
+        .then((user) => {
+          setCurrentUser(user);
+          setMessage(SUCCESS__UPDATE_MESSAGE);
+          form.resetForm();
+        })
+        .catch((err) => {
+          if (err.status === CONFLICT_ERROR_CODE) {
+            setMessage(EMAIL_EXIST_MESSAGE);
+          } else {
+            setMessage(NO_CONNECTION_MESSAGE);
+          }
+        });
+  };
 
   useEffect(() => {
-    resetForm();
-  }, [resetForm])
+    form.setValues({ name: currentUser.name, email: currentUser.email });
+  }, [currentUser]);
+
+  useEffect(() => {
+    const { name, email } = form.values;
+
+    if (form.isValid && (currentUser.name !== name || currentUser.email !== email)) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  }, [form.values, currentUser]);
 
   return (
-      <main className="profile">
-        <form className="profile__form" name="profile" noValidate onSubmit={handleSubmit}>
-          <h1 className="profile__title">Привет</h1>
-          <div className="profile__labels-container">
-            <label className="profile__label">
-              <span className="profile__label-text">Имя</span>
+      <div className="profile">
+        <Header />
+        <div className="profile__content">
+          <h2 className="profile__heading profile__text profile__text_marked">
+            {`Привет, ${currentUser.name}!`}
+          </h2>
+          <form
+              className="profile__info"
+              id="profile"
+              name="profile"
+              onSubmit={handleSubmit}
+          >
+            <div className="profile__info-item">
+              <p className="profile__text profile__text_marked">Имя</p>
               <input
-                  name="name"
-                  className={`profile__input ${errors.name && 'profile__input_error'}`}
-                  onChange={handleChange}
-                  value={values.name || 'Никита'}
+                  className="profile__text profile__input"
                   type="text"
+                  name="name"
+                  value={form.values.name || ''}
+                  onChange={form.handleChange}
+                  pattern="^[a-zA-Zа-яА-Я\s-]+$"
                   required
-                  minLength="2"
-                  maxLength="30"
               />
-              <span className="profile__error-name">{errors.name || ''}</span>
-            </label>
-            <label className="profile__label">
-              <span className="profile__label-text">E-mail</span>
+            </div>
+            <div className="profile__info-item">
+              <p className="profile__text profile__text_marked">E-mail</p>
               <input
-                  name="email"
-                  className={`profile__input ${errors.email && 'profile__input_error'}`}
-                  onChange={handleChange}
-                  value={values.email || 'Nikkach1997@yandex.ru'}
+                  className="profile__text profile__input"
                   type="email"
+                  name="email"
+                  value={form.values.email || ''}
+                  onChange={form.handleChange}
+                  pattern="^[\w]+@[a-zA-Z]+\.[a-zA-Z]{1,3}$"
                   required
               />
-              <span className="profile__error">{errors.email || ''}</span>
-            </label>
-          </div>
-          <div className="profile__button-container">
-            <button
-                type="submit"
-                className={`profile__button-edit ${
-                    !isValid && 'profile__button-edit_disabled'
-                }`}
-                disabled={!isValid}
-            >
-              Редактировать
-            </button>
-            <button type="submit" className="profile__button-exit">
-              Выйти из аккаунта
-            </button>
-          </div>
-        </form>
-      </main>
-  )
+            </div>
+          </form>
+          <ul className="profile__buttons">
+            <p className="profile__text profile__message">{message}</p>
+            <li className="profile__button-item">
+              <button
+                  className={`profile__button ${disabled && 'profile__button_disabled'} profile__text`}
+                  type="submit"
+                  form="profile"
+                  disabled={disabled}
+              >
+                Редактировать
+              </button>
+            </li>
+            <li className="profile__button-item">
+              <button
+                  className="profile__button profile__text profile__text_color_red"
+                  type="button"
+                  onClick={handleSignout}
+              >
+                Выйти из аккаунта
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+  );
 }

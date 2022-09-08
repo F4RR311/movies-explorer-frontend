@@ -19,15 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="last fixes">
+    <list default="true" id="15f7956f-45a7-4027-ae74-884aaee2345b" name="Default Changelist" comment="debbuging">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutMe/AboutMe.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavTab/NavTab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavTab/NavTab.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Techs/Techs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Techs/Techs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,28 +50,43 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/мой макет/movies-explorer-frontend-master" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/movies-explorer-frontend-level-3" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components" />
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src" />
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\utils" />
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\images" />
-      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\AboutMe" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components\App" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend" />
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\components" />
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\contexts" />
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\node_modules" />
+      <recent name="C:\Yandex practicum\Диплом\movies-explorer-frontend\src\hooks" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="eject" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="eject" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
@@ -89,6 +99,22 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="predeploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="predeploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.predeploy" />
+        <item itemvalue="npm.eject" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -103,7 +129,33 @@
       <workItem from="1660781400063" duration="2000" />
       <workItem from="1660859113597" duration="24000" />
       <workItem from="1660994408505" duration="4199000" />
-      <workItem from="1661098552639" duration="7270000" />
+      <workItem from="1661098552639" duration="7415000" />
+      <workItem from="1661278454751" duration="736000" />
+      <workItem from="1661532649940" duration="1053000" />
+      <workItem from="1661629365770" duration="5101000" />
+      <workItem from="1661635335045" duration="450000" />
+      <workItem from="1661676473210" duration="6680000" />
+      <workItem from="1661707376661" duration="789000" />
+      <workItem from="1661749473961" duration="61000" />
+      <workItem from="1661880216997" duration="13354000" />
+      <workItem from="1661894995920" duration="28000" />
+      <workItem from="1661976237088" duration="12000" />
+      <workItem from="1661976338397" duration="264000" />
+      <workItem from="1662052104183" duration="17515000" />
+      <workItem from="1662130430258" duration="119000" />
+      <workItem from="1662131506516" duration="5968000" />
+      <workItem from="1662137935682" duration="6652000" />
+      <workItem from="1662146900635" duration="12757000" />
+      <workItem from="1662160029023" duration="3598000" />
+      <workItem from="1662193900058" duration="11310000" />
+      <workItem from="1662212677027" duration="1307000" />
+      <workItem from="1662214448490" duration="1138000" />
+      <workItem from="1662215747659" duration="16800000" />
+      <workItem from="1662301573626" duration="69000" />
+      <workItem from="1662301651869" duration="11907000" />
+      <workItem from="1662330014304" duration="203000" />
+      <workItem from="1662401732044" duration="8090000" />
+      <workItem from="1662487908027" duration="7728000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1659727223803</created>
@@ -147,7 +199,231 @@
       <option name="project" value="LOCAL" />
       <updated>1661102264694</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="final fix">
+      <created>1661111487577</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661111487577</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix">
+      <created>1661630779210</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661630779210</updated>
+    </task>
+    <task id="LOCAL-00009" summary="develop">
+      <created>1661631516380</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661631516380</updated>
+    </task>
+    <task id="LOCAL-00010" summary="develop">
+      <created>1661635783290</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1661635783290</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix movies">
+      <created>1661677214960</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661677214960</updated>
+    </task>
+    <task id="LOCAL-00012" summary="json">
+      <created>1661679085473</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1661679085473</updated>
+    </task>
+    <task id="LOCAL-00013" summary="json">
+      <created>1661679227047</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1661679227047</updated>
+    </task>
+    <task id="LOCAL-00014" summary="json">
+      <created>1661679483804</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1661679483804</updated>
+    </task>
+    <task id="LOCAL-00015" summary="json">
+      <created>1661680053466</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1661680053466</updated>
+    </task>
+    <task id="LOCAL-00016" summary="json">
+      <created>1661680927670</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1661680927670</updated>
+    </task>
+    <task id="LOCAL-00017" summary="port">
+      <created>1661681122856</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1661681122856</updated>
+    </task>
+    <task id="LOCAL-00018" summary="readme+https">
+      <created>1661682555833</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1661682555833</updated>
+    </task>
+    <task id="LOCAL-00019" summary="readme">
+      <created>1661682795497</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1661682795497</updated>
+    </task>
+    <task id="LOCAL-00020" summary="readme">
+      <created>1661707564687</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1661707564687</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix-like">
+      <created>1661891054508</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1661891054508</updated>
+    </task>
+    <task id="LOCAL-00022" summary="total project refactoring">
+      <created>1662067368043</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1662067368043</updated>
+    </task>
+    <task id="LOCAL-00023" summary="react v-18.2 refactoring">
+      <created>1662133978422</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1662133978422</updated>
+    </task>
+    <task id="LOCAL-00024" summary="react v-18.2 refactoring">
+      <created>1662136143140</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1662136143140</updated>
+    </task>
+    <task id="LOCAL-00025" summary="react v-18.2 refactoring №3">
+      <created>1662150777699</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1662150777699</updated>
+    </task>
+    <task id="LOCAL-00026" summary="react v-18.2 refactoring №4">
+      <created>1662157722068</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1662157722068</updated>
+    </task>
+    <task id="LOCAL-00027" summary="react v-18.2 refactoring №5">
+      <created>1662158712260</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1662158712260</updated>
+    </task>
+    <task id="LOCAL-00028" summary="react v-18.2 refactoring №6">
+      <created>1662201825521</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1662201825522</updated>
+    </task>
+    <task id="LOCAL-00029" summary="react v-18.2 refactoring №6">
+      <created>1662211511730</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1662211511730</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fix">
+      <created>1662218779422</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1662218779422</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fix">
+      <created>1662228187357</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1662228187357</updated>
+    </task>
+    <task id="LOCAL-00032" summary="async">
+      <created>1662231518658</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1662231518658</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix-cookie">
+      <created>1662328707485</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1662328707485</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fix">
+      <created>1662493023307</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1662493023307</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix">
+      <created>1662493658675</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1662493658675</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix">
+      <created>1662494152862</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1662494152862</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fix">
+      <created>1662494410524</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1662494410524</updated>
+    </task>
+    <task id="LOCAL-00038" summary="debbuging">
+      <created>1662494669371</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1662494669371</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,32 +446,70 @@
     <MESSAGE value="start-develop" />
     <MESSAGE value="last fixes" />
     <MESSAGE value="create navTab" />
-    <option name="LAST_COMMIT_MESSAGE" value="create navTab" />
+    <MESSAGE value="final fix" />
+    <MESSAGE value="develop" />
+    <MESSAGE value="fix movies" />
+    <MESSAGE value="json" />
+    <MESSAGE value="port" />
+    <MESSAGE value="readme+https" />
+    <MESSAGE value="readme" />
+    <MESSAGE value="fix-like" />
+    <MESSAGE value="total project refactoring" />
+    <MESSAGE value="react v-18.2 refactoring" />
+    <MESSAGE value="react v-18.2 refactoring №3" />
+    <MESSAGE value="react v-18.2 refactoring №4" />
+    <MESSAGE value="react v-18.2 refactoring №5" />
+    <MESSAGE value="react v-18.2 refactoring №6" />
+    <MESSAGE value="async" />
+    <MESSAGE value="fix-cookie" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="debbuging" />
+    <option name="LAST_COMMIT_MESSAGE" value="debbuging" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1661108419034">
+    <state x="828" y="408" key="#ESLint" timestamp="1662163592087">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661108419034" />
-    <state width="1877" height="86" key="GridCell.Tab.0.bottom" timestamp="1661001000149">
+    <state x="828" y="408" key="#ESLint/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662163592087" />
+    <state x="92" y="92" width="1736" height="848" key="DiffContextDialog" timestamp="1662236954483">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.bottom/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state width="1877" height="86" key="GridCell.Tab.0.center" timestamp="1661001000149">
+    <state x="92" y="92" width="1736" height="848" key="DiffContextDialog/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662236954483" />
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1662409390820">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.center/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state width="1877" height="86" key="GridCell.Tab.0.left" timestamp="1661001000149">
+    <state x="740" y="271" key="FileChooserDialogImpl/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662409390820" />
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1662137745765">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.left/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state width="1877" height="86" key="GridCell.Tab.0.right" timestamp="1661001000149">
+    <state width="1877" height="297" key="GridCell.Tab.0.bottom/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662137745765" />
+    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1662137745765">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="1877" height="86" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661001000149" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1661102268767">
+    <state width="1877" height="297" key="GridCell.Tab.0.center/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662137745765" />
+    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1662137745765">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1661102268767" />
+    <state width="1877" height="297" key="GridCell.Tab.0.left/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662137745765" />
+    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1662137745765">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1877" height="297" key="GridCell.Tab.0.right/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662137745765" />
+    <state x="733" y="322" key="SettingsEditor" timestamp="1662301628516">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="733" y="322" key="SettingsEditor/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662301628516" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1662494673003">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662494673003" />
+    <state x="616" y="238" key="run.anything.popup" timestamp="1662322143206">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="616" y="238" key="run.anything.popup/-1920.0.1536.826/0.0.1920.1032@0.0.1920.1032" timestamp="1662322143206" />
+    <state x="-1489" y="147" width="672" height="678" key="search.everywhere.popup" timestamp="1662224004881">
+      <screen x="-1920" y="0" width="1536" height="826" />
+    </state>
+    <state x="-1489" y="147" width="672" height="678" key="search.everywhere.popup/-1920.0.1536.826/0.0.1920.1032@-1920.0.1536.826" timestamp="1662224004881" />
   </component>
 </project>

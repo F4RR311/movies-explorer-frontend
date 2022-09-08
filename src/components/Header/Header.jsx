@@ -1,26 +1,19 @@
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
 import './Header.css';
-import Navigation from '../Navigation/Navigation.jsx';
-import logo from '../../images/logo.svg';
+import Logo from '../Logo/Logo';
+import UnauthLinks from '../UnauthLinks/UnauthLinks';
+import Navigation from '../Navigation/Navigation';
+import UserContext from '../../contexts/UserContext';
 
-function Header({ loggedIn, onClickBurger, isBurgerOpened }) {
+export default function Header() {
+  const { currentUser } = useContext(UserContext);
 
   return (
-    <header
-     className="header"
-    >
-      <div className="header__container">
-        <Link to='/' className='header__link'>
-          <img src={logo} alt="Логотип" />
-        </Link>
-        <Navigation
-          loggedIn={loggedIn}
-          onClickBurger={onClickBurger}
-          isBurgerOpened={isBurgerOpened}
-        />
-      </div>
-    </header>
+      <header className="header">
+         <Logo />
+        {currentUser._id ? <Navigation /> : <UnauthLinks />}
+
+      </header>
+
   );
 }
-
-export default Header;

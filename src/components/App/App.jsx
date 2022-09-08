@@ -1,73 +1,62 @@
+import React, { useEffect, useMemo, useState} from 'react';
 import './App.css';
-import moviesData from '../../utils/movies';
-import {useState, useEffect} from 'react';
-import {Route, Switch, useHistory} from 'react-router-dom';
-import Header from '../Header/Header';
-import Main from '../Main/Main.jsx';
-import Footer from '../Footer/Footer.jsx';
-import Movies from '../Movies/Movies.jsx';
-import SavedMovies from '../Movies/Movies.jsx';
-import Register from '../Register/Register.jsx';
-import Login from '../Login/Login.jsx';
-import Profile from '../Profile/Profile.jsx';
-import NotFound from '../NotFound/NotFound.jsx';
+import {Routes, Route} from 'react-router-dom';
+import Main from '../Main/Main';
+import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
+import Profile from '../Profile/Profile';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
+import NotFound from '../NotFound/NotFound'
+import UserContext from '../../contexts/UserContext';
+import mainApi from '../../utils/MainApi';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import TooltipContext from '../../contexts/TooltipContext';
+import InfoTooltip from '../InfoTooltip/InfoTooltip';
+import {NO_CONNECTION_MESSAGE, SUCCESS__ENTER} from '../../utils/constants';
 
 export default function App() {
-    const history = useHistory();
-    const [isBurgerOpened, setIsBurgerOpened] = useState(false);
-    const [movies, setMovies] = useState([]);
-    const [savedMovies, setSavedMovies] = useState([]);
+    const loggedIn = JSON.parse(localStorage.getItem('loggedIn')) || false;
 
-    function onClickBurger(isBurgerOpened) {
-        setIsBurgerOpened(!isBurgerOpened);
-    }
+    const [currentUser, setCurrentUser] = useState({});
+    const [tooltipMessage, setTooltipMessage] = useState('');
 
-    function goBack() {
-        history.goBack();
-    }
+    const userContext = useMemo(() => ({currentUser, setCurrentUser}), [currentUser]);
+    const tooltipContext = useMemo(() => ({tooltipMessage, setTooltipMessage}), [tooltipMessage]);
 
     useEffect(() => {
-        setMovies(moviesData);
+        if (loggedIn) {
+            mainApi.getUser(loggedIn)
+                .then((user) => {
+                    if (user) {
+                        localStorage.setItem('userId', user._id);
+                        setCurrentUser(user);
+                    }
+                })
+                .catch(() => setTooltipMessage(NO_CONNECTION_MESSAGE));
+        }
     }, []);
 
-    useEffect(() => {
-        setSavedMovies(moviesData.filter((movie) => {
-            return movie.saved
-        }))
-    }, []);
 
     return (
         <div className="app">
-            <Switch>
-                <Route path="/" exact>
-                    <Header authorized={false} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened}/>
-                    <Main/>
-                    <Footer/>
-                </Route>
-                <Route path="/movies">
-                    <Header authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened}/>
-                    <Movies movies={movies}/>
-                    <Footer/>
-                </Route>
-                <Route exact path="/saved-movies">
-                    <Header authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened}/>
-                    <SavedMovies movies={savedMovies}/>
-                    <Footer/>
-                </Route>
-                <Route exact path="/signup">
-                    <Register/>
-                </Route>
-                <Route exact path="/signin">
-                    <Login/>
-                </Route>
-                <Route exact path="/profile">
-                    <Header authorized={true} onClickBurger={onClickBurger} isBurgerOpened={isBurgerOpened}/>
-                    <Profile/>
-                </Route>
-                <Route path="*">
-                    <NotFound goBack={goBack}/>
-                </Route>
-            </Switch>
+            <UserContext.Provider value={userContext}>
+                <TooltipContext.Provider value={tooltipContext}>
+                    <InfoTooltip message={tooltipMessage}/>
+                    <Routes>
+                        <Route exact path="/" element={<Main/>}/>
+                        <Route path="/movies" element={<ProtectedRoute allowed={loggedIn}><Movies/></ProtectedRoute>}/>
+                        <Route path="/saved-movies"
+                               element={<ProtectedRoute allowed={loggedIn}><SavedMovies/></ProtectedRoute>}/>
+                        <Route path="/profile"
+                               element={<ProtectedRoute allowed={loggedIn}><Profile/></ProtectedRoute>}/>
+                        <Route path="/signup"
+                               element={<ProtectedRoute allowed={!loggedIn}><Register/></ProtectedRoute>}/>
+                        <Route path="/signin" element={<ProtectedRoute allowed={!loggedIn}><Login/></ProtectedRoute>}/>
+                        <Route path="*" element={<NotFound/>}/>
+                    </Routes>
+                </TooltipContext.Provider>
+            </UserContext.Provider>
         </div>
-    )
+    );
 }

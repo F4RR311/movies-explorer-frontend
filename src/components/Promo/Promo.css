@@ -4,6 +4,7 @@
     margin: auto;
     min-height: 493px;
     border-radius: 10px;
+    max-width: 1200px;
 }
 @media screen and (max-width: 768px) {
     .promo {

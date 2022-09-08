@@ -3,11 +3,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-area: about-me;
   width: 100%;
 }
 
 .about-me__container {
-  max-width: 1280px;
+
   width: 100%;
   padding: 110px 70px 100px;
   display: flex;

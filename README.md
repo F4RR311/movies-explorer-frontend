@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# ***Проект Movies-explorer (фронтенд)***
+Ссылка на пулл реквест https://github.com/F4RR311/movies-explorer-frontend/pull/2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Проект является **дипломной работой** на курсе веб-разработчик ***Яндекс.Практикума***.
+## *Описание*
+----
+### ***О чём проект?***
 
-## Available Scripts
+Данное вэб-приложение является сайтом-портфолио и мини-кинопоиском, открывающимся после регистрации.
 
-In the project directory, you can run:
+Бэкэнд часть проекта располагается [тут](https://github.com/F4RR311/movies-explorer-api).
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+***В нём представлены:***
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+* Лендинг c кратким описанием:
+  + Работы над дипломом (этапы, дэдлайны)
+  + Изученных технологий во время обучения
+  + Информации о себе
+  + Портфолио (часть проектов)
+* Поисковик фильмов с возможностью сохранения их к себе в коллекцию
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+## *Функциональность:*
+* Защищённость роутов (нельзя перейти к приложению-поисковику, если не выполнен вход)
+* Реализована "живая" **валидация** всех форм/полей ввода с использованием регулярных выражений и сторонних библиотек
+* Использование собственных **хуков** (универсальный обработчик полей, валидация, контроль разрешения экрана)
+* Возможность **поиска** фильмов со стороннего API
+* Сохранение/удаление найденных фильмов к себе в аккаунт
+* Реализован **фильтр** короткометражных фильмов
+* Запоминание состояния полей ввода (в форме поиска фильмов), фильтра и найденных фильмов (при обновлении страницы данные не будут утеряны)
+* Поиск фильмов как на русском, так и английском языке
+* Реализован **попап** для демонтрации ошибок сервера или некорректных введённых данных
+* При загрузке данных показывается прелоадер. По окончанию загрузки он скрывается
+* Полноценый **респонсив** для всех популярных разрешений экрана
+* Бургерное меню для мобильной и планшетной версии
+* Реализовано закрытие попапа и бургерного меню по **оверлею** или по клавише **Esc**
+* Переход к показу трейлера фильма при нажатии на постер
+* Показ данных о фильме при наведении курсора на постер
+* Все нужные кнопки подсвечиваются **outline**, им привязанно невидимое, но слышимое описание, для людей с **ограниченными** возможностями
+* Приложение свёрстано по **BEM(БЭМ)**, соблюдается **семантичность**
+* На странице поиска фильмов по клику на кнопку **"Ещё"** - показываются дополнительные фильмы (на роуте с сохранёнными фильмами показываются сразу **все** фильмы)
+* Утилитарные функции, константы, функции обращения к серверу вынесены в отдельный файл
+* Запросы к серверу написанны с использованием парадигмы **ООП**
+* Возможность редактирования своего профиля (почты и имени)
+* Запоминание **состояния** входа пользователя (при обновлении страницы будет выполнен автоматический вход)
+* Реализована **микроанимация** всех ссылок и кнопок
+* Для создания сеток используется **flex** и **grid**
+* Все данные хранятся на сервере, использовано сторонее и собственное API
 
-### `npm run build`
+---
+## *Используемые технологии:*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* React 17
+* JS
+* HTML 5
+* CSS 3
+---
+## *Планы по доработке:*
+* Реализовать сохранение токена в cookie
+---
+## *Директории:*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`/components` — папка с фунциональными компонентами
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`/context` — папка с контекстом
 
-### `npm run eject`
+`/hooks` — папка с кастомными хуками
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`/images` — папка c изображениями
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`/vendor` — папка с кодом сторонних разработчиков
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`/utils` — папка с файлами, требуемых для работы сервиса (утилитарные функции, запросы к серверу, константы)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
+## *Запуск проекта:*
+`npm i` — установка зависимостей
 
-## Learn More
+`npm run start` — запускает приложение
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
+## *Ссылки:*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Домен по которому доступно приложение [https://f4rr311.nomoredomains.xyz](https://f4rr311.nomoredomains.xyz/)
+* Домен с собственным бэкендом [https://api.f4rr311.nomoredomains.sbs](https://api.f4rr311.nomoredomains.sbs)
+* Домен со сторонним API(все фильмы) [https://api.nomoreparties.co/beatfilm-movies](https://api.nomoreparties.co/beatfilm-movies)
+* Публичный IP адрес сервера `51.250.66.62
